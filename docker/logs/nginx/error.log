@@ -1,0 +1,123 @@
+2021/09/29 02:39:10 [notice] 1#1: using the "epoll" event method
+2021/09/29 02:39:10 [notice] 1#1: nginx/1.21.3
+2021/09/29 02:39:10 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/09/29 02:39:10 [notice] 1#1: OS: Linux 5.11.0-36-generic
+2021/09/29 02:39:10 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/09/29 02:39:10 [notice] 1#1: start worker processes
+2021/09/29 02:39:10 [notice] 1#1: start worker process 31
+2021/09/29 02:39:10 [notice] 1#1: start worker process 32
+2021/09/29 02:39:10 [notice] 1#1: start worker process 33
+2021/09/29 02:39:10 [notice] 1#1: start worker process 34
+2021/09/29 02:39:10 [notice] 1#1: start worker process 35
+2021/09/29 02:39:10 [notice] 1#1: start worker process 36
+2021/09/29 02:39:10 [notice] 1#1: start worker process 37
+2021/09/29 02:39:10 [notice] 1#1: start worker process 38
+2021/09/29 02:39:56 [error] 31#31: *2 FastCGI sent in stderr: "PHP message: PHP Warning:  require(/var/www/html/public/../vendor/autoload.php): failed to open stream: No such file or directory in /var/www/html/public/index.php on line 34PHP message: PHP Fatal error:  require(): Failed opening required '/var/www/html/public/../vendor/autoload.php' (include_path='.:/usr/local/lib/php') in /var/www/html/public/index.php on line 34" while reading response header from upstream, client: 172.18.0.1, server: _, request: "GET / HTTP/1.1", upstream: "fastcgi://172.18.0.2:9000", host: "laravel.docker.test"
+2021/09/29 02:43:23 [error] 31#31: *5 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught ErrorException: file_put_contents(/var/www/html/storage/framework/views/5ec98f73456acbfa9ca695d9d04acd7c7a76afc9.php): failed to open stream: Permission denied in /var/www/html/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:187
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'file_put_conten...', '/var/www/html/v...', 187, Array)
+#1 /var/www/html/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(187): file_put_contents('/var/www/html/s...', '<?php $__env->s...', 0)
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/View/Compilers/BladeCompiler.php(163): Illuminate\Filesystem\Filesystem->put('/var/www/html/s...', '<?php $__env->s...')
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(55): Illuminate\View\Compilers\BladeCompiler->compile('/var/www/html/v...')
+#4 /var/www/html/vendor/facade/ignition/src/Views/Engines/CompilerEngine.php(37): Illuminate\View\Engines\Compile in /var/www/html/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php on line 187PHP message: PHP Fatal error:  Uncaught ErrorException: file_put_contents(/var/www/html/storage/framework/views/5ec98f73456acbfa9ca695d9d04acd7c7a76afc9.php): failed to open stream: Permission denied in /var/www/html/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:187
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'file_put_conten...', '/var/www/html/v...', 187, Array)
+#1 /var/www/html/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(187): file_put_contents('/var/www/html/s...', '<?php $__env->s...', 0)
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/View/Compilers/BladeCompiler.php(163): Illuminate\Filesystem\Filesystem->put('/var/www/html/s...', '<?php $__env->s...')
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/
+2021/09/29 02:44:54 [error] 31#31: *7 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught ErrorException: file_put_contents(/var/www/html/storage/framework/views/5ec98f73456acbfa9ca695d9d04acd7c7a76afc9.php): failed to open stream: Permission denied in /var/www/html/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:187
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'file_put_conten...', '/var/www/html/v...', 187, Array)
+#1 /var/www/html/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(187): file_put_contents('/var/www/html/s...', '<?php $__env->s...', 0)
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/View/Compilers/BladeCompiler.php(163): Illuminate\Filesystem\Filesystem->put('/var/www/html/s...', '<?php $__env->s...')
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(55): Illuminate\View\Compilers\BladeCompiler->compile('/var/www/html/v...')
+#4 /var/www/html/vendor/facade/ignition/src/Views/Engines/CompilerEngine.php(37): Illuminate\View\Engines\Compile in /var/www/html/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php on line 187PHP message: PHP Fatal error:  Uncaught ErrorException: file_put_contents(/var/www/html/storage/framework/views/5ec98f73456acbfa9ca695d9d04acd7c7a76afc9.php): failed to open stream: Permission denied in /var/www/html/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:187
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'file_put_conten...', '/var/www/html/v...', 187, Array)
+#1 /var/www/html/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(187): file_put_contents('/var/www/html/s...', '<?php $__env->s...', 0)
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/View/Compilers/BladeCompiler.php(163): Illuminate\Filesystem\Filesystem->put('/var/www/html/s...', '<?php $__env->s...')
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/
+2021/09/29 02:44:56 [error] 31#31: *7 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught ErrorException: file_put_contents(/var/www/html/storage/framework/views/5ec98f73456acbfa9ca695d9d04acd7c7a76afc9.php): failed to open stream: Permission denied in /var/www/html/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:187
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'file_put_conten...', '/var/www/html/v...', 187, Array)
+#1 /var/www/html/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(187): file_put_contents('/var/www/html/s...', '<?php $__env->s...', 0)
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/View/Compilers/BladeCompiler.php(163): Illuminate\Filesystem\Filesystem->put('/var/www/html/s...', '<?php $__env->s...')
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(55): Illuminate\View\Compilers\BladeCompiler->compile('/var/www/html/v...')
+#4 /var/www/html/vendor/facade/ignition/src/Views/Engines/CompilerEngine.php(37): Illuminate\View\Engines\Compile in /var/www/html/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php on line 187PHP message: PHP Fatal error:  Uncaught ErrorException: file_put_contents(/var/www/html/storage/framework/views/5ec98f73456acbfa9ca695d9d04acd7c7a76afc9.php): failed to open stream: Permission denied in /var/www/html/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:187
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'file_put_conten...', '/var/www/html/v...', 187, Array)
+#1 /var/www/html/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(187): file_put_contents('/var/www/html/s...', '<?php $__env->s...', 0)
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/View/Compilers/BladeCompiler.php(163): Illuminate\Filesystem\Filesystem->put('/var/www/html/s...', '<?php $__env->s...')
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/
+2021/09/29 02:45:16 [error] 31#31: *7 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught ErrorException: file_put_contents(/var/www/html/storage/framework/views/5ec98f73456acbfa9ca695d9d04acd7c7a76afc9.php): failed to open stream: Permission denied in /var/www/html/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:187
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'file_put_conten...', '/var/www/html/v...', 187, Array)
+#1 /var/www/html/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(187): file_put_contents('/var/www/html/s...', '<?php $__env->s...', 0)
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/View/Compilers/BladeCompiler.php(163): Illuminate\Filesystem\Filesystem->put('/var/www/html/s...', '<?php $__env->s...')
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(55): Illuminate\View\Compilers\BladeCompiler->compile('/var/www/html/v...')
+#4 /var/www/html/vendor/facade/ignition/src/Views/Engines/CompilerEngine.php(37): Illuminate\View\Engines\Compile in /var/www/html/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php on line 187PHP message: PHP Fatal error:  Uncaught ErrorException: file_put_contents(/var/www/html/storage/framework/views/5ec98f73456acbfa9ca695d9d04acd7c7a76afc9.php): failed to open stream: Permission denied in /var/www/html/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:187
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'file_put_conten...', '/var/www/html/v...', 187, Array)
+#1 /var/www/html/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(187): file_put_contents('/var/www/html/s...', '<?php $__env->s...', 0)
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/View/Compilers/BladeCompiler.php(163): Illuminate\Filesystem\Filesystem->put('/var/www/html/s...', '<?php $__env->s...')
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/
+2021/09/29 02:47:03 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/09/29 02:47:03 [notice] 31#31: gracefully shutting down
+2021/09/29 02:47:03 [notice] 32#32: gracefully shutting down
+2021/09/29 02:47:03 [notice] 35#35: gracefully shutting down
+2021/09/29 02:47:03 [notice] 33#33: gracefully shutting down
+2021/09/29 02:47:03 [notice] 31#31: exiting
+2021/09/29 02:47:03 [notice] 32#32: exiting
+2021/09/29 02:47:03 [notice] 36#36: gracefully shutting down
+2021/09/29 02:47:03 [notice] 37#37: gracefully shutting down
+2021/09/29 02:47:03 [notice] 34#34: gracefully shutting down
+2021/09/29 02:47:03 [notice] 35#35: exiting
+2021/09/29 02:47:03 [notice] 33#33: exiting
+2021/09/29 02:47:03 [notice] 36#36: exiting
+2021/09/29 02:47:03 [notice] 34#34: exiting
+2021/09/29 02:47:03 [notice] 37#37: exiting
+2021/09/29 02:47:03 [notice] 31#31: exit
+2021/09/29 02:47:03 [notice] 32#32: exit
+2021/09/29 02:47:03 [notice] 35#35: exit
+2021/09/29 02:47:03 [notice] 36#36: exit
+2021/09/29 02:47:03 [notice] 34#34: exit
+2021/09/29 02:47:03 [notice] 33#33: exit
+2021/09/29 02:47:03 [notice] 37#37: exit
+2021/09/29 02:47:03 [notice] 38#38: gracefully shutting down
+2021/09/29 02:47:03 [notice] 38#38: exiting
+2021/09/29 02:47:03 [notice] 38#38: exit
+2021/09/29 02:47:03 [notice] 1#1: signal 17 (SIGCHLD) received from 36
+2021/09/29 02:47:03 [notice] 1#1: worker process 36 exited with code 0
+2021/09/29 02:47:03 [notice] 1#1: signal 29 (SIGIO) received
+2021/09/29 02:47:03 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2021/09/29 02:47:03 [notice] 1#1: worker process 32 exited with code 0
+2021/09/29 02:47:03 [notice] 1#1: worker process 38 exited with code 0
+2021/09/29 02:47:03 [notice] 1#1: signal 29 (SIGIO) received
+2021/09/29 02:47:03 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2021/09/29 02:47:03 [notice] 1#1: worker process 35 exited with code 0
+2021/09/29 02:47:03 [notice] 1#1: signal 29 (SIGIO) received
+2021/09/29 02:47:03 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2021/09/29 02:47:03 [notice] 1#1: worker process 34 exited with code 0
+2021/09/29 02:47:03 [notice] 1#1: signal 29 (SIGIO) received
+2021/09/29 02:47:03 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2021/09/29 02:47:03 [notice] 1#1: worker process 33 exited with code 0
+2021/09/29 02:47:03 [notice] 1#1: signal 29 (SIGIO) received
+2021/09/29 02:47:03 [notice] 1#1: signal 17 (SIGCHLD) received from 37
+2021/09/29 02:47:03 [notice] 1#1: worker process 37 exited with code 0
+2021/09/29 02:47:03 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2021/09/29 02:47:03 [notice] 1#1: worker process 31 exited with code 0
+2021/09/29 02:47:03 [notice] 1#1: exit
+2021/09/29 02:51:00 [notice] 1#1: using the "epoll" event method
+2021/09/29 02:51:00 [notice] 1#1: nginx/1.21.3
+2021/09/29 02:51:00 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/09/29 02:51:00 [notice] 1#1: OS: Linux 5.11.0-36-generic
+2021/09/29 02:51:00 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/09/29 02:51:00 [notice] 1#1: start worker processes
+2021/09/29 02:51:00 [notice] 1#1: start worker process 30
+2021/09/29 02:51:00 [notice] 1#1: start worker process 31
+2021/09/29 02:51:00 [notice] 1#1: start worker process 32
+2021/09/29 02:51:00 [notice] 1#1: start worker process 33
+2021/09/29 02:51:00 [notice] 1#1: start worker process 34
+2021/09/29 02:51:00 [notice] 1#1: start worker process 35
+2021/09/29 02:51:00 [notice] 1#1: start worker process 36
+2021/09/29 02:51:00 [notice] 1#1: start worker process 37

@@ -1,0 +1,8 @@
+172.18.0.1 - - [29/Sep/2021:02:39:56 +0000] "GET / HTTP/1.1" 200 416 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36"
+172.18.0.1 - - [29/Sep/2021:02:39:57 +0000] "GET /favicon.ico HTTP/1.1" 200 0 "http://laravel.docker.test/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36"
+172.18.0.1 - - [29/Sep/2021:02:43:23 +0000] "GET / HTTP/1.1" 500 5 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36"
+172.18.0.1 - - [29/Sep/2021:02:44:54 +0000] "GET / HTTP/1.1" 500 5 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36"
+172.18.0.1 - - [29/Sep/2021:02:44:56 +0000] "GET / HTTP/1.1" 500 5 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36"
+172.18.0.1 - - [29/Sep/2021:02:45:16 +0000] "GET / HTTP/1.1" 500 5 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36"
+172.18.0.1 - - [29/Sep/2021:02:51:42 +0000] "GET / HTTP/1.1" 500 533056 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36"
+172.18.0.1 - - [29/Sep/2021:03:47:28 +0000] "GET / HTTP/1.1" 500 533042 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36"
