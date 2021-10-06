@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\admin\ProductController;
+use App\Http\Controllers\admin\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +16,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('admin.layout_admin.index');
+    return view('admin.dashboard.dashboard');
 });
+
 Route::get('/dashboard', function () {
     return view('admin.dashboard.dashboard');
 });
+
+Route::resource('/product',App\Http\Controllers\admin\ProductController::class);
+Route::resource('/category',App\Http\Controllers\admin\CategoryController::class);
