@@ -37,6 +37,7 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('admin/dist/js/demo.js')}}"></script>
 <!-- Sweet-alert -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
 {!! Toastr::message() !!}
 

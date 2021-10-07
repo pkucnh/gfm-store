@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -127,12 +128,20 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        $category = Category::find($id);
-        $category->delete();
-
-        Toastr::success('Xóa danh mục thành công', 'Thành công');
-        return Redirect::to("category");
+        $data = $request->all();
+        if(isset($data['checkbox'])){
+            foreach($data['checkbox'] as $id){
+                $category = Category::find($id);
+                $category->delete();
+            }
+            Toastr::success('Xóa danh mục thành công', 'Thành công');
+            return Redirect::to("category");          
+        }else{
+            Toastr::error('Chọn ít nhất 1 danh mục để xóa', 'Thất bại');
+            return Redirect::to("category");  ;;
+        }
     }
+
 }
