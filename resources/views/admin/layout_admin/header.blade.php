@@ -264,6 +264,31 @@
               </li>
             </ul>
           </li>
+
+
+          <li class="nav-item">
+            <a href="{{url('category')}}" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Sản phẩm
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('product.create')}}" class="nav-link">
+                  <i class="fas fa-plus"></i>
+                  <p>Thêm</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('product.index')}}" class="nav-link">
+                  <i class="fas fa-clipboard"></i>
+                  <p> Quản lý sản phẩm</p>
+                </a>
+              </li>
+            </ul>
+          </li>
           
           <li class="nav-header">EXAMPLES</li>
         </ul>

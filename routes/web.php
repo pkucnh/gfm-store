@@ -25,5 +25,6 @@ Route::get('/dashboard', function () {
 
 // Route::resource('/product',App\Http\Controllers\admin\ProductController::class);
 Route::resource('/category',App\Http\Controllers\admin\CategoryController::class);
+Route::resource('/product',App\Http\Controllers\admin\ProductController::class);
 // Route::get('category/delete', 'App\Http\Controllers\admin\CategoryController@delete');
 // Route::post('category/delete', 'App\Http\Controllers\admin\CategoryController@delete')->name('delete');
