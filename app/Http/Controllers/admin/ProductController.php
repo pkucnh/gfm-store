@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Toastr;
 
 use Illuminate\Support\Str;
 use App\Models\Category;
@@ -15,7 +16,8 @@ class ProductController extends Controller
   
     public function index()
     {
-        return view('admin.products.show_products');
+        $product = Product::all();
+        return view('admin.products.show_products', compact('product'));
     }
 
   
@@ -29,6 +31,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        $check_pro = Product::all();
 
         //ảnh đại diện sản phẩm
         $image = $request->file('img');
@@ -47,8 +50,15 @@ class ProductController extends Controller
         //     // return Redirect::back()->withErrors('Vui lòng chọn ảnh trước khi upload');
         // }elseif(count($fileImg) > 3 || count($fileImg) < 3){
         //     // return Redirect::back()->withErrors('Số ảnh chỉ được up lên là 3');
-        // }
 
+
+        //kiểm tra sản phẩm đã tồn tại
+        foreach($check_pro as $name_pro){
+            if($name_pro['name'] == $data['name_pro']){
+                Toastr::error('Sản phẩm đã tồn tại', 'Thất bại');
+                return redirect()->back();
+            }
+        }
 
         $product = new Product();
         $product->name = $data['name_pro'];
@@ -59,6 +69,8 @@ class ProductController extends Controller
         $product->status = $data['status'];
         $product->category_id = $data['category'];
         $product->quanlity = $data['quantity'];
+        $product->add_day = $data['add_day'];
+        $product->expired_day = $data['expired_day'];
         $product->save();
 
 
@@ -74,6 +86,9 @@ class ProductController extends Controller
                 
             }
         }
+
+        Toastr::success('Thêm sản phẩm thành công', 'Thành công');
+        return redirect('product/create');
        
     }
 
