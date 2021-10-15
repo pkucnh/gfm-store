@@ -5,7 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Toastr;
-
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
 use App\Models\Category;
 use App\Models\Product;
@@ -71,6 +71,7 @@ class ProductController extends Controller
         $product->quanlity = $data['quantity'];
         $product->add_day = $data['add_day'];
         $product->expired_day = $data['expired_day'];
+        $product->description = $data['description'];
         $product->save();
 
 
@@ -88,7 +89,7 @@ class ProductController extends Controller
         }
 
         Toastr::success('Thêm sản phẩm thành công', 'Thành công');
-        return redirect('product/create');
+        return redirect('product');
        
     }
 
@@ -101,17 +102,59 @@ class ProductController extends Controller
   
     public function edit($id)
     {
-        //
+        $cate = Category::all();
+        $product = Product::find($id);
+        return view('admin.products.edit', compact('product', 'cate'));
     }
 
     public function update(Request $request, $id)
     {
-        //
+
+        $data = $request->all();
+        $product = Product::find($id);
+
+        $image_old = $data['img_old'];
+
+        $image = $request->file('img');
+        if($image){
+            $img_name = $image->getClientOriginalName();
+            $storedPath = $image->move('admin/images/product', $img_name);
+        }else{
+            $img_name = $image_old;
+        }
+        
+
+        $product->name = $data['name_pro'];
+        $product->slug = Str::slug($data['name_pro']);
+        $product->image = $img_name;
+        $product->price = $data['price'];
+        $product->price_sales = $data['price_sale'];
+        $product->status = $data['status'];
+        $product->category_id = $data['category'];
+        $product->quanlity = $data['quantity'];
+        $product->add_day = $data['add_day'];
+        $product->expired_day = $data['expired_day'];
+        $product->description = $data['description'];
+        $product->save();
+
+        Toastr::success('Cập nhật sản phẩm thành công', 'Thành công');
+        return redirect('product');
     }
 
    
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $data = $request->all();
+        if(isset($data['checkbox'])){
+            foreach($data['checkbox'] as $id){
+                $product = Product::find($id);
+                $product->delete();
+            }
+            Toastr::success('Xóa sản phẩm thành công', 'Thành công');
+            return Redirect::to("product");          
+        }else{
+            Toastr::error('Chọn ít nhất 1 sản phẩm để xóa', 'Thất bại');
+            return Redirect::to("product");
+        }
     }
 }

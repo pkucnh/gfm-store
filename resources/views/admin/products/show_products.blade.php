@@ -33,7 +33,7 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            {{-- <form action="{{url('category/destroy')}}" method="post" > --}}
+                            <form action="{{url('product/destroy')}}" method="post" >
                             @csrf
                             @method('DELETE')
                                 <div class="delete_ch" style="width=120px;">
