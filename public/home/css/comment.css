@@ -1,0 +1,36 @@
+.rating {
+    list-style: none;
+    float: left;
+}
+.date {
+    font-size: 11px;
+}
+
+.comment-text {
+    font-size: 13px;
+    width: 250px
+}
+
+.fs-12 {
+    font-size: 12px
+}
+
+.shadow-none {
+    box-shadow: none
+}
+
+.name {
+    color: #525252
+}
+
+.cursor:hover {
+    color: blue
+}
+
+.cursor {
+    cursor: pointer
+}
+
+.textarea {
+    resize: none
+}
