@@ -55,7 +55,7 @@ class ProductController extends Controller
         //kiểm tra sản phẩm đã tồn tại
         foreach($check_pro as $name_pro){
             if($name_pro['name'] == $data['name_pro']){
-                Toastr::error('Sản phẩm đã tồn tại', 'Thất bại');
+                // Toastr::error('Sản phẩm đã tồn tại', 'Thất bại');
                 return redirect()->back();
             }
         }
@@ -67,6 +67,7 @@ class ProductController extends Controller
         $product->price = $data['price'];
         $product->price_sales = $data['price_sale'];
         $product->status = $data['status'];
+        $product->description = $data['note'];
         $product->category_id = $data['category'];
         $product->quanlity = $data['quantity'];
         $product->add_day = $data['add_day'];

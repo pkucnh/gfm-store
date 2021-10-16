@@ -82,6 +82,9 @@ class HomeController extends Controller
         
             $rating->product_id = $data['product_id'];
             $rating->rating = $data['index'];
+            $rating->time = now();
+            $rating->name = $data['name'];
+            $rating->email = $data['email']; 
             $rating->content = $data['comment_content'];
             $rating->save();
         
@@ -95,15 +98,12 @@ class HomeController extends Controller
             $count = 1;
             foreach($comment as $key => $com){
                 $output.= '<div class="bg-light p-2" style="border-bottom: 1px solid rgb(240, 240, 240);">
-                <div class="d-flex flex-row user-info"><img class="rounded-circle" src="https://i.imgur.com/RpzrMR2.jpg" width="40">
-                    <div class="d-flex flex-column justify-content-start ml-2"><span class="d-block font-weight-bold name">'.$com->name.'</span>
-                    '.'for($count=1; $count<=$com->rating; $count++){
-                        <i class="fa fa-star"></i>
-                    }
-                    
-                        
-                    '.'
-                    <span class="date text-black-50">'.$com->created_at.'</span></div>
+                <div class="d-flex flex-row user-info"><img class="rounded-circle" src="'.asset('admin/images/user/user.jpg').'" width="50" height="55">
+                    <div class="d-flex flex-column justify-content-start ml-2">
+                    <span class="d-block font-weight-bold name">'.$com->name.'</span> <div class="product__details__rating">
+                    <span style="font-size: medium; color:rgb(148, 148, 148)">Đánh giá: </span>
+                    <span>'.$com->rating.'</span><i class="fa fa-star" style="color: rgb(228, 228, 8)"></i></div>                
+                    <span class="date text-black-50">'.$com->time.'</span></div>
                 </div>
                 <div class="mt-2 bg-light " >
                     <p class="comment-text">'.$com->content.'</p>

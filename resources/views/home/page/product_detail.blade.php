@@ -25,7 +25,7 @@
                     <div class="product__details__pic">
                         <div class="product__details__pic__item">
                             <img class="product__details__pic__item--large"
-                                src="{{asset('admin/images/product')}}/{{$product->image}}" width="300px" height="550px">
+                                src="{{asset('admin/images/product')}}/{{$product->image}}" width="300px" height="500px">
                         </div>
                         <div class="product__details__pic__slider owl-carousel">
                             @foreach($gallerys as $gallery)
@@ -108,7 +108,7 @@
                             </li>
                         </ul>
                         <div class="tab-content">
-                            <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                            <div class="tab-pane active col-md-11" style="margin: 0 auto" id="tabs-1" role="tabpanel">
                             <div class="product__details__tab__desc">
                                     <!-- <h6>Đánh giá </h6> -->
                                     <div class="container">
@@ -121,17 +121,15 @@
 										            @csrf
                                                     <input type="hidden" name="comment_product_id" class="comment_product_id" value="{{$product->id}}">
                                                     <div id="comment_show"></div>
-                                                
+
                                                 </form>
                                                     <div id="notify_comment"></div>
                                                     <!-- <div class="bg-white float-right"> -->
-                                                        <strong class="starts float-right mt-4">Viết đánh giá của bạn</strong>
-                                
-                                                
-                                                    <!-- <form action="#"> -->
-                                                    <!-- </div> -->
-                                                    @csrf
-                                                        <ul class="list-inline rating"  title="Average Rating">
+                                                        <!-- <div class="float-right"> -->
+                                                            <strong class="starts float-right mt-4">Viết đánh giá của bạn</strong>
+                                                        <!-- </div> -->
+                                                        @csrf
+                                                        <ul class="list-inline rating float-right"  title="Average Rating">
                                                             @for($count=1; $count<=5; $count++)	
                                                             <div id="notifys_comment"></div>
                                                                 <input type="hidden" id="index" value="{{$count}}">
@@ -142,14 +140,18 @@
                                                         </ul>
                              
 
-                                                        <div class="bg-light p-2 float-left" >
+                                                        <div class="bg-light p-2" >
                                                          
                                                         <!-- <div id="notify_comment float-left"></div> -->
-                                                            
-                                                            <div class="d-flex flex-row align-items-start "><img class="rounded-circle" src="https://i.imgur.com/RpzrMR2.jpg" width="40">
-                                                         
-                                                            <textarea data-index="{{$count}}"  data-product_id="{{$product->id}}" data-rating="{{$rating}}" class="form-control ml-1 shadow-none textarea comment_content" name="comment" placeholder="Mời bạn bình luận hoặc đặt câu hỏi"></textarea></div>
-                                                            <div class="mt-2 text-right"><button class="btn btn-success btn-sm shadow-none send-comment" type="button">Gửi đánh giá</button></div>
+                                                            <div class="col-md-6 float-left">
+                                                                <input type="text" class="form-control name_cmt mb-2" placeholder="Họ tên (bắt buộc)">
+                                                                <input type="text" class="form-control email_cmt" placeholder="Email">
+                                                            </div>
+                                                            <div class="col-md-6 float-right">
+                                                                <div class="d-flex flex-row align-items-start "><img class="rounded-circle" src="{{asset('admin/images/user/user.jpg')}}" width="40">
+                                                                <textarea data-index="{{$count}}"  data-product_id="{{$product->id}}" data-rating="{{$rating}}" class="form-control ml-1 shadow-none textarea comment_content" name="comment" placeholder="Mời bạn bình luận hoặc đặt câu hỏi"></textarea></div>
+                                                                <div class="mt-2 text-right"><button class="btn btn-success btn-sm shadow-none send-comment" type="button">Gửi đánh giá</button></div>
+                                                            </div>
                                                         </div>
 
                                                     <!-- </form> -->
@@ -161,10 +163,10 @@
                                 
                             </div>
                             <div class="tab-pane" id="tabs-2" role="tabpanel">
-                                <div class="product__details__tab__desc">
-                                    <h6>Thông tin sản phẩm </h6>
-                                    <p>nội dung..</p>
-                                    <p>nội dung..</p>
+                                <div class="product__details__tab__desc col-md-11" style="margin: 0 auto">
+                                    <div style="border-left: 5px green solid"> <h4 style="margin-left:5px; margin-bottom:10px">Thông tin sản phẩm </h4> </div>
+                                    <p>{!!$product->description!!}</p>
+                                    <!-- <p>nội dung..</p> -->
                                 </div>
                             </div>
                             <div class="tab-pane" id="tabs-3" role="tabpanel">
@@ -262,7 +264,7 @@
     @include('home.layout.footer')
 
     <script type="text/javascript">
-  
+
         function remove_background(product_id)
         {
             for(var count = 1; count <= 5; count++)
@@ -321,13 +323,15 @@
            
             }
             $('.send-comment').click(function(){
-      
+
+            var email = $('.email_cmt').val();
+            var name = $('.name_cmt').val();
             var comment_content = $('.comment_content').val();
             var _token = $('input[name="_token"]').val();
                 $.ajax({
                     url:"{{url('/send-comment')}}",
                     method:"POST",
-                    data:{index:index,product_id:product_id,comment_content:comment_content,_token:_token},
+                    data:{index:index,product_id:product_id,email:email,name:name,comment_content:comment_content,_token:_token},
                     success:function(data){
                
                         Swal.fire({
