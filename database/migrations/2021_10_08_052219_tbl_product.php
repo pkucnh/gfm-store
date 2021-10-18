@@ -29,6 +29,7 @@ class TblProduct extends Migration
             $table->date('add_day');
             $table->date('expired_day');
             $table->timestamps();
+ // php artisan migrate --path=database/migrations/TênFileMớiTạo.php
         });
     }
 
