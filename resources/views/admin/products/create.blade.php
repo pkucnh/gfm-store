@@ -78,12 +78,25 @@
                                         </div>
         
                                         <div class="form-group">
-                                            <div class="col col-md-6"><label for="select" class=" form-control-label">Danh mục</label></div>
+                                            <div class="col col-md-6"><label for="select" class=" form-control-label">Danh mục cha</label></div>
                                             <div class="col-12 col-md-12">
-                                                <select name="category" id="select" class="form-control">
+                                                <select name="category" id="select_cate" class="form-control">
+                                                    <option value="0">Chọn danh mục cho sản phẩm</option> 
                                                     @foreach ($cate as $val)
                                                         <option value="{{$val->id}}">{{$val->name}}</option> 
                                                     @endforeach 
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <div class="col col-md-6"><label for="select" class=" form-control-label">Danh mục con</label></div>
+                                            <div class="col-12 col-md-12">
+                                                <select name="child_cate_id" id="chid_cate" class="form-control">
+                                                    {{-- @foreach ($cate as $val)
+                                                        <option value="{{$val->id}}">{{$val->name}}</option> 
+                                                    @endforeach  --}}
                                                 </select>
                                             </div>
                                         </div>

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\CategoryController;
+use App\Http\Controllers\admin\childCateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,5 +27,6 @@ Route::get('/dashboard', function () {
 // Route::resource('/product',App\Http\Controllers\admin\ProductController::class);
 Route::resource('/category',App\Http\Controllers\admin\CategoryController::class);
 Route::resource('/product',App\Http\Controllers\admin\ProductController::class);
-// Route::get('category/delete', 'App\Http\Controllers\admin\CategoryController@delete');
+Route::resource('/child-category',App\Http\Controllers\admin\childCateController::class);
+Route::post('/select-category', [childCateController::class, 'select_category']);
 // Route::post('category/delete', 'App\Http\Controllers\admin\CategoryController@delete')->name('delete');

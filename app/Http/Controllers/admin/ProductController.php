@@ -10,6 +10,7 @@ use Illuminate\Support\Str;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\galley;
+use App\Models\childCate;
 
 class ProductController extends Controller
 {
@@ -68,6 +69,7 @@ class ProductController extends Controller
         $product->price_sales = $data['price_sale'];
         $product->status = $data['status'];
         $product->category_id = $data['category'];
+        $product->child_cate_id = $data['child_cate_id'];
         $product->quanlity = $data['quantity'];
         $product->add_day = $data['add_day'];
         $product->expired_day = $data['expired_day'];
@@ -104,13 +106,53 @@ class ProductController extends Controller
     {
         $cate = Category::all();
         $product = Product::find($id);
-        return view('admin.products.edit', compact('product', 'cate'));
+        $child_cate = childCate::where('id', $product['child_cate_id'])->get();
+        $gallery = galley::where('product_id', $id)->get();
+        return view('admin.products.edit', compact('product', 'cate', 'gallery', 'child_cate'));
     }
 
     public function update(Request $request, $id)
     {
 
         $data = $request->all();
+
+        $image = $request->file('img_gallery_1');
+        if($image){
+            $img_name1 = $image->getClientOriginalName();
+            $storedPath = $image->move('admin/images/product', $img_name1);
+        }else{
+            $img_name1 =  $data['img_gallery_old_1'];
+        }
+
+        $image = $request->file('img_gallery_2');
+        if($image){
+            $img_name2 = $image->getClientOriginalName();
+            $storedPath = $image->move('admin/images/product', $img_name2);
+        }else{
+            $img_name2 = $data['img_gallery_old_2'];
+        }
+
+        $image = $request->file('img_gallery_3');
+        if($image){
+            $img_name3 = $image->getClientOriginalName();
+            $storedPath = $image->move('admin/images/product', $img_name3);
+        }else{
+            $img_name3 =  $data['img_gallery_old_3'];
+        }
+
+        $gallery1 = galley::find($data['id_gallery_1']);
+        $gallery1->name = $img_name1;
+        $gallery1->save();
+
+        $gallery2 = galley::find($data['id_gallery_2']);
+        $gallery2->name = $img_name2;
+        $gallery2->save();
+
+        $gallery3 = galley::find($data['id_gallery_3']);
+        $gallery3->name = $img_name3;
+        $gallery3->save();
+
+
         $product = Product::find($id);
 
         $image_old = $data['img_old'];
@@ -131,6 +173,7 @@ class ProductController extends Controller
         $product->price_sales = $data['price_sale'];
         $product->status = $data['status'];
         $product->category_id = $data['category'];
+        $product->child_cate_id = $data['child_cate_id'];
         $product->quanlity = $data['quantity'];
         $product->add_day = $data['add_day'];
         $product->expired_day = $data['expired_day'];
