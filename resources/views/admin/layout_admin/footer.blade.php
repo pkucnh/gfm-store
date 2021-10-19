@@ -70,10 +70,9 @@
       $('.img').click();
     })
 
-   
+   //select cate
     $('#select_cate').change(function(){
       var _token = $('input[name="_token"]').val();
-
       var id_cate = $('#select_cate').val();
 
      $.ajax({

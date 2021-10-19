@@ -77,6 +77,7 @@ class ProductController extends Controller
         $product->save();
 
 
+        // insert ảnh liên quan sản phẩm
         if($img_gallery){
             foreach($img_gallery as $val){
                 $nameImgGalley = $val->getClientOriginalName();
