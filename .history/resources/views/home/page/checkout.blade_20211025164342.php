@@ -64,7 +64,7 @@
                                         </div>
                                     </div>
                                 </form>
-                                <input type="button" name="calculate_order" class="site-btn check_out calculate_delivery" value="Kiểm tra" >
+                                <input type="button" name="calculate_order" class="site-btn check_out calculate_delivery float-right" value="Kiểm tra" >
                                 <!-- </div> -->
                                 
                             </div>
