@@ -46,14 +46,36 @@
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="{{asset('admin/images/product')}}/{{$product->image}}">
                             <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><button><i class="fa fa-heart"></i></button></li>
+                                <li><a href="{{url('product-detail')}}/{{$product->slug}}/{{$product->id}}"i class="fa fa-retweet"></i></a></li>
+                                <li><button class="add-to-cart" name="add-cart" data-id = "{{$product->id}}"><i class="fa fa-shopping-cart"></i></button></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
                             <h6><a href="{{url('product-detail')}}/{{$product->slug}}/{{$product->id}}">{{$product->name}}</a></h6>
-                            <h5>{{number_format($product->price),' '}} đ</h5>
+                                @if(!$product->price_sales)
+                                    <form>
+                                        @csrf
+                                        <input type="hidden" value="{{$product->id}}" class="cart_product_id_{{$product->id}}" >
+                                        <input type="hidden" value="{{$product->name}}" class="cart_product_name_{{$product->id}}" >
+                                        <input type="hidden" value="{{$product->image}}" class="cart_product_image_{{$product->id}}" >
+                                        <input type="hidden" value="{{$product->price}}" class="cart_product_price_{{$product->id}}" >
+                                        <input type="hidden" name="amount" min="1" value="1" class="cart_product_amount_{{$product->id}}">  
+                                        <h5>{{number_format($product->price),''}} đ</h5>
+                                    </form> 
+                                @else
+                                    <form>
+                                        @csrf
+                                        <input type="hidden" value="{{$product->id}}" class="cart_product_id_{{$product->id}}" >
+                                        <input type="hidden" value="{{$product->name}}" class="cart_product_name_{{$product->id}}" >
+                                        <input type="hidden" value="{{$product->image}}" class="cart_product_image_{{$product->id}}" >
+                                        <input type="hidden" value="{{$product->price_sales}}" class="cart_product_price_{{$product->id}}" >
+                                        <!-- <div class="pro-qty"> -->
+                                        <input type="hidden" name="amount" min="1" value="1" class="cart_product_amount_{{$product->id}}">  
+                                        <!-- </div> -->
+                                        <h5>{{number_format($product->price_sales),''}} đ</h5>
+                                    </form> 
+                                @endif
                         </div>
                     </div>
                 </div>
@@ -215,30 +237,39 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6">
                     <div class="latest-product__text">
-                        <h4> Sản Phẩm yêu thích</h4>
+                        <h4> Sản Phẩm Yêu Thích</h4>
                         <div class="latest-product__slider owl-carousel">
                             <div class="latest-prdouct__slider__item">
                                 @foreach($product_like as $like)
-                                <a href="#" class="latest-product__item">
+                                <a href="{{url('product-detail')}}/{{$like->slug}}/{{$like->id}}"" class="latest-product__item">
                                     <div class="latest-product__item__pic">
                                         <img src="{{asset('admin/images/product')}}/{{$like->image}}" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>{{$like->name}}</h6>
-                                        <span>{{number_format($like->price),' '}} đ</span>
+                                       
+                                        @if(!$like->price_sales)
+                                            <span>{{number_format($like->price),' '}} đ</span>
+                                        @else
+                                           <span>{{number_format($like->price_sales),' '}} đ</span>
+                                        @endif
                                     </div>
                                 </a>
                                 @endforeach
                             </div>
                             <div class="latest-prdouct__slider__item">
                                 @foreach($product_like as $like)
-                                <a href="#" class="latest-product__item">
+                                <a href="{{url('product-detail')}}/{{$like->slug}}/{{$like->id}}"" class="latest-product__item">
                                     <div class="latest-product__item__pic">
                                         <img src="{{asset('admin/images/product')}}/{{$like->image}}" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>{{$like->name}}</h6>
-                                        <span>{{number_format($like->price),' '}} đ</span>
+                                        <h6>{{$like->name}}</h6>                                       
+                                        @if(!$like->price_sales)
+                                            <span>{{number_format($like->price),' '}} đ</span>
+                                        @else
+                                           <span>{{number_format($like->price_sales),' '}} đ</span>
+                                        @endif
                                     </div>
                                 </a>
                                 @endforeach
@@ -252,26 +283,36 @@
                         <div class="latest-product__slider owl-carousel">
                             <div class="latest-prdouct__slider__item">
                                 @foreach($product_new as $new)
-                                <a href="#" class="latest-product__item">
+                                <a href="{{url('product-detail')}}/{{$new->slug}}/{{$new->id}}" class="latest-product__item">
                                     <div class="latest-product__item__pic">
                                         <img src="{{asset('admin/images/product')}}/{{$new->image}}" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>{{$new->name}}</h6>
-                                        <span>{{number_format($new->price),' '}} đ</span>
+                                        
+                                        @if(!$new->price_sales)
+                                            <span>{{number_format($new->price),' '}} đ</span>
+                                        @else
+                                           <span>{{number_format($new->price_sales),' '}} đ</span>
+                                        @endif
                                     </div>
                                 </a>
                                 @endforeach
                             </div>
                             <div class="latest-prdouct__slider__item">
                                 @foreach($product_new as $new)
-                                <a href="#" class="latest-product__item">
+                                <a href="{{url('product-detail')}}/{{$new->slug}}/{{$new->id}}" class="latest-product__item">
                                     <div class="latest-product__item__pic">
                                         <img src="{{asset('admin/images/product')}}/{{$new->image}}" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>{{$new->name}}</h6>
-                                        <span>{{number_format($new->price),' '}} đ</span>
+
+                                        @if(!$new->price_sales)
+                                            <span>{{number_format($new->price),' '}} đ</span>
+                                        @else
+                                           <span>{{number_format($new->price_sales),' '}} đ</span>
+                                        @endif
                                     </div>
                                 </a>
                                 @endforeach
@@ -285,26 +326,36 @@
                         <div class="latest-product__slider owl-carousel">
                             <div class="latest-prdouct__slider__item">
                                 @foreach($product_view as $view)
-                                <a href="#" class="latest-product__item">
+                                <a href="{{url('product-detail')}}/{{$view->slug}}/{{$view->id}}" class="latest-product__item">
                                     <div class="latest-product__item__pic">
                                         <img src="{{asset('admin/images/product')}}/{{$view->image}}" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>{{$view->name}}</h6>
-                                        <span>{{number_format($view->price),' '}} đ</span>
+
+                                        @if(!$view->price_sales)
+                                            <span>{{number_format($view->price),' '}} đ</span>
+                                        @else
+                                           <span>{{number_format($view->price_sales),' '}} đ</span>
+                                        @endif
                                     </div>
                                 </a>
                                 @endforeach
                             </div>
                             <div class="latest-prdouct__slider__item">
                                 @foreach($product_view as $view)
-                                <a href="#" class="latest-product__item">
+                                <a href="{{url('product-detail')}}/{{$view->slug}}/{{$view->id}}"" class="latest-product__item">
                                     <div class="latest-product__item__pic">
                                         <img src="{{asset('admin/images/product')}}/{{$view->image}}" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>{{$view->name}}</h6>
-                                        <span>{{number_format($view->price),' '}} đ</span>
+
+                                        @if(!$view->price_sales)
+                                            <span>{{number_format($view->price),' '}} đ</span>
+                                        @else
+                                           <span>{{number_format($view->price_sales),' '}} đ</span>
+                                        @endif
                                     </div>
                                 </a>
                                 @endforeach

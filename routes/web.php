@@ -25,6 +25,9 @@ use App\Http\Controllers\admin\CategoryController;
 Route::get('/dashboard', function () {
     return view('admin.dashboard.dashboard');
 });
+Route::get('/test', function () {
+    return view('welcome');
+});
 // Trang chủ
 Route::get('/', 'App\Http\Controllers\home\HomeController@index');
 // Chi tiết sản phẩm
@@ -37,3 +40,48 @@ Route::post('/load-comment', 'App\Http\Controllers\home\HomeController@LoadComme
 Route::resource('/category',App\Http\Controllers\admin\CategoryController::class);
 Route::resource('/product',App\Http\Controllers\admin\ProductController::class);
 Route::resource('/coupon',App\Http\Controllers\admin\CouponController::class);
+
+Route::get('/login', function () {
+    return view('home.page.login');
+});
+Route::get('/by-product', 'App\Http\Controllers\home\HomeController@ByProduct');
+
+    // ADD-CART
+    Route::post('/add-cart','App\Http\Controllers\home\CartController@AddCart');
+    // DELETE-CART
+    Route::match(['get','post'],'/delete-cart/{session_id}',[
+        'as'=> 'cart.delete',  
+        'uses'=> 'App\Http\Controllers\home\CartController@DeleteCart'
+    ]);         
+    // UPDATE-CART
+    Route::match(['get','post'],'/update-cart',[
+        'as'=> 'cart.update',  
+        'uses'=> 'App\Http\Controllers\home\CartController@UpdateCart'
+    ]);     
+    // SHOW-CART
+    Route::match(['get','post'],'/cart',[
+        'as'=> 'cart.add',  
+        'uses'=> 'App\Http\Controllers\home\CartController@ShowCart'
+    ]);    
+
+    Route::get('/show-cart', 'App\Http\Controllers\home\CartController@ShowCart');
+    //check_coupon
+    Route::post('/check-coupon', 'App\Http\Controllers\home\CartController@CheckCoupon');
+    // delate coupon code
+    Route::post('/delete-coupon', 'App\Http\Controllers\home\CartController@DeleteCoupon');
+    Route::get('/delete-coupon', 'App\Http\Controllers\home\CartController@DeleteCoupon');
+
+    // kiểm tra thanh toán
+    Route::get('/check-out', 'App\Http\Controllers\home\CartController@CheckOut');
+
+    // phi ship
+    Route::post('/select-delivery-home', 'App\Http\Controllers\home\CartController@SelectDeliveryHome');
+    Route::get('/select-delivery-home', 'App\Http\Controllers\home\CartController@SelectDeliveryHome');
+
+    // check ship
+    Route::post('/calculate-fee', 'App\Http\Controllers\home\CartController@CalculateFee');
+    // xóa shipping
+    Route::post('/delete-fee', 'App\Http\Controllers\home\CartController@DeleteFee');
+    Route::get('/delete-fee', 'App\Http\Controllers\home\CartController@DeleteFee');
+    // thanh then 
+    Route::post('/confirm-order', 'App\Http\Controllers\home\CartController@ConfirmOrder');

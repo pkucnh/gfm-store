@@ -7,10 +7,11 @@
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ogani | Template</title>
-
+    <title>Green Farm Mart | Chuổi siêu thị cung cấp thực phẩm sạch</title>
+    <link rel="shortcut icon" href="{{asset('home/img/logo/logo.png')}}" type="image/png">
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+    
 
     <!-- Css Styles -->
     <!-- <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css"> -->
@@ -43,12 +44,12 @@
         <div class="humberger__menu__cart">
             <ul>
                 <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                <li><a href=""><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
             </ul>
         </div>
         <div class="humberger__menu__widget">
             <div class="header__top__right__language">
-                <img src="img/language.png" alt="">
+                <img src="{{asset('admin/logo/logo.png')}}" alt="">
                 <div>English</div>
                 <span class="arrow_carrot-down"></span>
                 <ul>
@@ -100,7 +101,7 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__left">
                             <ul>
-                                <li><i class="fa fa-envelope"></i> GFM@gmail.com</li>
+                                <li><i class="fa fa-envelope"></i> greenmart@gmail.com</li>
                                 <li>Miễn phí giao hàng cho đơn hàng chỉ từ 99k</li>
                             </ul>
                         </div>
@@ -115,7 +116,7 @@
                             </div>
                             <div class="header__top__right__language">
                                 <img src="img/language.png" alt="">
-                                <div>Tiếng anh</div>
+                                <div>Tiếng Việt</div>
                                 <span class="arrow_carrot-down"></span>
                                 <ul>
                                     <li><a href="#">Tiếng việt</a></li>
@@ -134,7 +135,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        <a href="{{url('/')}}"><img src="{{asset('home/img/logo/logo.png')}}" width="65px" height="50px" alt=""><img src="{{asset('home/login/img/t.png')}}" width="135px" height="55px" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-7">
@@ -158,7 +159,7 @@
                     <div class="header__cart">
                         <ul>
                             <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                            <li><a href="{{url('show-cart')}}"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                         </ul>
                     
                     </div>

@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use RealRashid\SweetAlert\Facades\Alert;
-use App\Models\Coupons;
+use App\Models\Coupon;
 use App\Models\Product;
 use Toastr;
 
@@ -23,7 +23,7 @@ class CouponController extends Controller
      */
     public function index()
     {
-        $coupon = Coupons::all();
+        $coupon = Coupon::all();
 
         $data = [
         'coupon' => $coupon,
@@ -52,7 +52,7 @@ class CouponController extends Controller
         // Nhận các dự liệu từ form 
         $data = $request->all();
         // Khởi tạo 1 đối tượng mới và thêm dữ liệu vào
-        $Coupon = new Coupons();
+        $Coupon = new Coupon();
         $Coupon->coupon_code = $data['code'];
         $Coupon->coupon_name = $data['name'];
         $Coupon->coupon_condition = $data['condition'];
@@ -88,7 +88,7 @@ class CouponController extends Controller
      */
     public function edit($id)
     {
-        $Coupon = Coupons::find($id);
+        $Coupon = Coupon::find($id);
         $data = [
         'coupon' => $Coupon,
         ];
@@ -105,7 +105,7 @@ class CouponController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->all();
-        $Coupon = Coupons::find($id);
+        $Coupon = Coupon::find($id);
         $image = $request->file('img');
 
         if(!$image){
@@ -136,7 +136,7 @@ class CouponController extends Controller
         // $data = $request->all();
         if(isset($_POST['checkbox'])){
             foreach($_POST['checkbox'] as $id){
-                $Coupon = Coupons::find($id);
+                $Coupon = Coupon::find($id);
                 $Coupon->delete();
             }
             Toastr::success('Xóa danh mục thành công', 'Thành công');

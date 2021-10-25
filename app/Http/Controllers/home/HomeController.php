@@ -9,6 +9,7 @@ use App\Models\Product;
 use App\Models\Gallrey;
 use App\Models\Rating;
 use Toastr;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -82,7 +83,10 @@ class HomeController extends Controller
         
             $rating->product_id = $data['product_id'];
             $rating->rating = $data['index'];
-            $rating->time = now();
+
+            $dt = Carbon::now('Asia/Ho_Chi_Minh');
+
+            $rating->time = $dt->toDayDateTimeString();
             $rating->name = $data['name'];
             $rating->email = $data['email']; 
             $rating->content = $data['comment_content'];
@@ -98,11 +102,9 @@ class HomeController extends Controller
             $count = 1;
             foreach($comment as $key => $com){
                 $output.= '<div class="bg-light p-2" style="border-bottom: 1px solid rgb(240, 240, 240);">
-                <div class="d-flex flex-row user-info"><img class="rounded-circle" src="'.asset('admin/images/user/user.jpg').'" width="50" height="55">
+                <div class="d-flex flex-row user-info"><img class="rounded-circle" src="'.asset('admin/images/user/user.jpg').'" width="37" height="37">
                     <div class="d-flex flex-column justify-content-start ml-2">
-                    <span class="d-block font-weight-bold name">'.$com->name.'</span> <div class="product__details__rating">
-                    <span style="font-size: medium; color:rgb(148, 148, 148)">Đánh giá: </span>
-                    <span>'.$com->rating.'</span><i class="fa fa-star" style="color: rgb(228, 228, 8)"></i></div>                
+                    <span class="d-block font-weight-bold name">'.$com->name.' - <span class="">'.$com->rating.'</span><i class="fa fa-star" style="color: rgb(228, 228, 8)"></i></span>               
                     <span class="date text-black-50">'.$com->time.'</span></div>
                 </div>
                 <div class="mt-2 bg-light " >
@@ -115,9 +117,19 @@ class HomeController extends Controller
     
     
 
-    public function store(Request $request)
+    public function ByProduct(Request $request)
     {
-        //
+        // $products = Category::->get();
+        $products = Product::join('category', 'category.id', '=', 'category_id')->select(('category.name as name_cate'),'product.*')->orderbyDesc('price_sales')->get();
+        $product_new = Product::orderbyDesc('id')->paginate(3);
+        $category = Category::where('status','=',1)->get();
+        $data = [
+            'category' => $category,
+            'products' => $products, 
+            'product_new' => $product_new,
+        ];
+        
+        return view('home.page.by_product',$data);
     }
 
     /**

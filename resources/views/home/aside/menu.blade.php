@@ -1,3 +1,4 @@
+
 <section class="hero hero-normal">
         <div class="container">
             <div class="row">
@@ -7,6 +8,7 @@
                             <i class="fa fa-bars"></i>
                             <span>Doanh mục</span>
                         </div>
+
                         <ul>
                             @foreach($category as $row)
                             <li><a href="#">{{$row->name}}</a></li>
@@ -32,7 +34,7 @@
                             </div>
                         </div>
                     </div>
-                  <!-- @include('home.aside.slide') -->
+                
                 </div>
             </div>
         </div>
