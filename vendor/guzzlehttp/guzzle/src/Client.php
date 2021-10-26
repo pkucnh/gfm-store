@@ -344,12 +344,9 @@ class Client implements ClientInterface, \Psr\Http\Client\ClientInterface
         ];
 
         if (isset($options['headers'])) {
-<<<<<<< HEAD
             if (array_keys($options['headers']) === range(0, count($options['headers']) - 1)) {
                 throw new InvalidArgumentException('The headers array must have header name as keys.');
             }
-=======
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
             $modify['set_headers'] = $options['headers'];
             unset($options['headers']);
         }

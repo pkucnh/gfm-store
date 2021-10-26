@@ -1,20 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-<<<<<<< HEAD
+
 use App\Http\Controllers\home\HomeController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\CategoryController;
-<<<<<<< HEAD
+
 use App\Http\Controllers\admin\BlogController;
 use App\Http\Controllers\admin\CategoryBlogController;
-=======
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
-=======
-use App\Http\Controllers\admin\ProductController;
-use App\Http\Controllers\admin\CategoryController;
+
 use App\Http\Controllers\admin\childCateController;
->>>>>>> 70f6a11f6dbf0d4cfa10d7db3cb4d4e9133cbd6b
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,28 +23,22 @@ use App\Http\Controllers\admin\childCateController;
 |
 */
 
-<<<<<<< HEAD
-// Route::get('/', function () {
-//     return view('home.index.index');
-// });
+Route::get('/', function () {
+    return view('home.index.index');
+});
 
 // Route::resource('/',App\Http\Controllers\home\HomeController::class);
-=======
-Route::get('/', function () {
-    return view('admin.dashboard.dashboard');
-});
->>>>>>> 70f6a11f6dbf0d4cfa10d7db3cb4d4e9133cbd6b
+
 
 Route::get('/dashboard', function () {
     return view('admin.dashboard.dashboard');
 });
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+
+
 Route::get('/test', function () {
     return view('welcome');
 });
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
+
 // Trang chủ
 Route::get('/', 'App\Http\Controllers\home\HomeController@index');
 // Chi tiết sản phẩm
@@ -61,10 +51,9 @@ Route::post('/load-comment', 'App\Http\Controllers\home\HomeController@LoadComme
 Route::resource('/category',App\Http\Controllers\admin\CategoryController::class);
 Route::resource('/product',App\Http\Controllers\admin\ProductController::class);
 Route::resource('/coupon',App\Http\Controllers\admin\CouponController::class);
-<<<<<<< HEAD
+
 Route::resource('/blog',App\Http\Controllers\admin\BlogController::class);
 Route::resource('/category_blog',App\Http\Controllers\admin\CategoryBlogController::class);
-=======
 
 Route::get('/login', function () {
     return view('home.page.login');
@@ -110,8 +99,7 @@ Route::get('/by-product', 'App\Http\Controllers\home\HomeController@ByProduct');
     Route::get('/delete-fee', 'App\Http\Controllers\home\CartController@DeleteFee');
     // thanh then 
     Route::post('/confirm-order', 'App\Http\Controllers\home\CartController@ConfirmOrder');
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
-=======
+
 
 // Route::resource('/product',App\Http\Controllers\admin\ProductController::class);
 Route::resource('/category',App\Http\Controllers\admin\CategoryController::class);
@@ -119,4 +107,4 @@ Route::resource('/product',App\Http\Controllers\admin\ProductController::class);
 Route::resource('/child-category',App\Http\Controllers\admin\childCateController::class);
 Route::post('/select-category', [childCateController::class, 'select_category']);
 // Route::post('category/delete', 'App\Http\Controllers\admin\CategoryController@delete')->name('delete');
->>>>>>> 70f6a11f6dbf0d4cfa10d7db3cb4d4e9133cbd6b
+

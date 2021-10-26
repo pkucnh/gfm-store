@@ -164,11 +164,7 @@ final class Structure implements Schema
 			} else {
 				$keys = array_map('strval', array_keys($items));
 				foreach ($extraKeys as $key) {
-<<<<<<< HEAD
 					$hint = Nette\Utils\ObjectHelpers::getSuggestion($keys, (string) $key);
-=======
-					$hint = Nette\Utils\Helpers::getSuggestion($keys, (string) $key);
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
 					$context->addError(
 						'Unexpected item %path%' . ($hint ? ", did you mean '%hint%'?" : '.'),
 						Nette\Schema\Message::UNEXPECTED_ITEM,

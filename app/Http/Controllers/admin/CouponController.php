@@ -9,11 +9,9 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use RealRashid\SweetAlert\Facades\Alert;
-<<<<<<< HEAD
-use App\Models\Coupons;
-=======
+
 use App\Models\Coupon;
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
+
 use App\Models\Product;
 use Toastr;
 
@@ -27,12 +25,7 @@ class CouponController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
-        $coupon = Coupons::all();
-=======
         $coupon = Coupon::all();
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
-
         $data = [
         'coupon' => $coupon,
         ];
@@ -60,11 +53,9 @@ class CouponController extends Controller
         // Nhận các dự liệu từ form 
         $data = $request->all();
         // Khởi tạo 1 đối tượng mới và thêm dữ liệu vào
-<<<<<<< HEAD
-        $Coupon = new Coupons();
-=======
+
         $Coupon = new Coupon();
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
+
         $Coupon->coupon_code = $data['code'];
         $Coupon->coupon_name = $data['name'];
         $Coupon->coupon_condition = $data['condition'];
@@ -100,11 +91,9 @@ class CouponController extends Controller
      */
     public function edit($id)
     {
-<<<<<<< HEAD
-        $Coupon = Coupons::find($id);
-=======
+
         $Coupon = Coupon::find($id);
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
+
         $data = [
         'coupon' => $Coupon,
         ];
@@ -121,11 +110,9 @@ class CouponController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->all();
-<<<<<<< HEAD
-        $Coupon = Coupons::find($id);
-=======
+
         $Coupon = Coupon::find($id);
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
+
         $image = $request->file('img');
 
         if(!$image){
@@ -156,11 +143,9 @@ class CouponController extends Controller
         // $data = $request->all();
         if(isset($_POST['checkbox'])){
             foreach($_POST['checkbox'] as $id){
-<<<<<<< HEAD
-                $Coupon = Coupons::find($id);
-=======
+
                 $Coupon = Coupon::find($id);
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
+
                 $Coupon->delete();
             }
             Toastr::success('Xóa danh mục thành công', 'Thành công');

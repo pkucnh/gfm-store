@@ -5,11 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of Result Type.
  *
-<<<<<<< HEAD
  * (c) Graham Campbell <hello@gjcampbell.co.uk>
-=======
- * (c) Graham Campbell <graham@alt-three.com>
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.

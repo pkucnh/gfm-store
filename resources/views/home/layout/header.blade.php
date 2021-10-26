@@ -7,18 +7,11 @@
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<<<<<<< HEAD
-    <title>Ogani | Template</title>
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
-=======
     <title>Green Farm Mart | Chuổi siêu thị cung cấp thực phẩm sạch</title>
     <link rel="shortcut icon" href="{{asset('home/img/logo/logo.png')}}" type="image/png">
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
     
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
 
     <!-- Css Styles -->
     <!-- <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css"> -->
@@ -51,11 +44,7 @@
         <div class="humberger__menu__cart">
             <ul>
                 <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-<<<<<<< HEAD
-                <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
-=======
                 <li><a href=""><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
             </ul>
         </div>
         <div class="humberger__menu__widget">
@@ -74,13 +63,13 @@
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
-                <li class="active"><a href="./index.html">Trang chủ</a></li>
-                <li><a href="./shop-grid.html">Cửa hàng</a></li>
+                <li class="active"><a href="{{url('/')}}">Trang chủ</a></li>
+                <li><a href="#">Cửa hàng</a></li>
                 <li><a href="#">Pages</a>
                     <ul class="header__menu__dropdown">
-                        <li><a href="./shop-details.html">Shop Details</a></li>
-                        <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                        <li><a href="./checkout.html">Check Out</a></li>
+                        <li><a href="{{url('show-cart')}}">Shop Details</a></li>
+                        <li><a href="#">Shoping Cart</a></li>
+                        <li><a href="{{url('check-out')}}">Check Out</a></li>
                         <li><a href="./blog-details.html">Blog Details</a></li>
                     </ul>
                 </li>
@@ -112,11 +101,7 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__left">
                             <ul>
-<<<<<<< HEAD
-                                <li><i class="fa fa-envelope"></i> GFM@gmail.com</li>
-=======
                                 <li><i class="fa fa-envelope"></i> greenmart@gmail.com</li>
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                                 <li>Miễn phí giao hàng cho đơn hàng chỉ từ 99k</li>
                             </ul>
                         </div>
@@ -131,11 +116,7 @@
                             </div>
                             <div class="header__top__right__language">
                                 <img src="img/language.png" alt="">
-<<<<<<< HEAD
-                                <div>Tiếng anh</div>
-=======
                                 <div>Tiếng Việt</div>
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                                 <span class="arrow_carrot-down"></span>
                                 <ul>
                                     <li><a href="#">Tiếng việt</a></li>
@@ -154,11 +135,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-<<<<<<< HEAD
-                        <a href="{{url('/')}}"><img src="{{asset('admin/logo/logo.png')}}" width="65px" height="50px" alt=""><span style="font-size:22px; color:#6dc12e; font-weight: bold">Green Mart</span></a>
-=======
                         <a href="{{url('/')}}"><img src="{{asset('home/img/logo/logo.png')}}" width="65px" height="50px" alt=""><img src="{{asset('home/login/img/t.png')}}" width="135px" height="55px" alt=""></a>
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                     </div>
                 </div>
                 <div class="col-lg-7">
@@ -182,11 +159,7 @@
                     <div class="header__cart">
                         <ul>
                             <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-<<<<<<< HEAD
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
-=======
                             <li><a href="{{url('show-cart')}}"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                         </ul>
                     
                     </div>

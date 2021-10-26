@@ -189,11 +189,7 @@ class Swift_Mime_MimePart extends Swift_Mime_SimpleMimeEntity
     /** Encode charset when charset is not utf-8 */
     protected function convertString($string)
     {
-<<<<<<< HEAD
         $charset = strtolower($this->getCharset() ?? '');
-=======
-        $charset = strtolower($this->getCharset());
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
         if (!\in_array($charset, ['utf-8', 'iso-8859-1', 'iso-8859-15', ''])) {
             return mb_convert_encoding($string, $charset, 'utf-8');
         }

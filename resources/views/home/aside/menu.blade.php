@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
 <section class="hero hero-normal">
         <div class="container">
             <div class="row">
@@ -11,10 +8,7 @@
                             <i class="fa fa-bars"></i>
                             <span>Doanh mục</span>
                         </div>
-<<<<<<< HEAD
-=======
 
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                         <ul>
                             @foreach($category as $row)
                             <li><a href="#">{{$row->name}}</a></li>
@@ -40,11 +34,7 @@
                             </div>
                         </div>
                     </div>
-<<<<<<< HEAD
-                  <!-- @include('home.aside.slide') -->
-=======
                 
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                 </div>
             </div>
         </div>

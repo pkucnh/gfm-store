@@ -72,16 +72,16 @@
                             <div class="row mt-3">
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
-                                        <p>Họ và tên<span>*</span></p>
-                                        <input type="text" name="name" class="name">
+                                        <p>Họ<span>*</span></p>
+                                        <input type="text" name="last" class="last">
                                     </div>
                                 </div>
-                                <!-- <div class="col-lg-6">
+                                <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>Tên<span>*</span></p>
-                                        <input type="text" name="first_name" class="first_name">
+                                        <input type="text" name="first" class="first">
                                     </div>
-                                </div> -->
+                                </div>
                             </div>
                             
 

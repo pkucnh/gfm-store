@@ -225,21 +225,12 @@ EOT
         }
 
         // Strip port if present.
-<<<<<<< HEAD
         [$host] = \explode(':', $host, 2);
-=======
-        if (\strpos($host, ':')) {
-            /** @var string[] $hostParts will never be false because of the checks above */
-            $hostParts = \explode(':', $host, 2);
-            $host = $hostParts[0];
-        }
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
 
         foreach ($noProxyArray as $area) {
             // Always match on wildcards.
             if ($area === '*') {
                 return true;
-<<<<<<< HEAD
             }
 
             if (empty($area)) {
@@ -248,12 +239,6 @@ EOT
             }
 
             if ($area === $host) {
-=======
-            } elseif (empty($area)) {
-                // Don't match on empty values.
-                continue;
-            } elseif ($area === $host) {
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                 // Exact matches.
                 return true;
             }
@@ -340,11 +325,7 @@ EOT
             if ($asciiHost === false) {
                 $errorBitSet = $info['errors'] ?? 0;
 
-<<<<<<< HEAD
                 $errorConstants = array_filter(array_keys(get_defined_constants()), static function (string $name): bool {
-=======
-                $errorConstants = array_filter(array_keys(get_defined_constants()), static function ($name) {
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                     return substr($name, 0, 11) === 'IDNA_ERROR_';
                 });
 

@@ -332,11 +332,7 @@ class Swift_Signers_DomainKeySigner implements Swift_Signers_HeaderSigner
      */
     public function ignoreHeader($header_name)
     {
-<<<<<<< HEAD
         $this->ignoredHeaders[strtolower($header_name ?? '')] = true;
-=======
-        $this->ignoredHeaders[strtolower($header_name)] = true;
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
 
         return $this;
     }
@@ -354,11 +350,7 @@ class Swift_Signers_DomainKeySigner implements Swift_Signers_HeaderSigner
         $listHeaders = $headers->listAll();
         foreach ($listHeaders as $hName) {
             // Check if we need to ignore Header
-<<<<<<< HEAD
             if (!isset($this->ignoredHeaders[strtolower($hName ?? '')])) {
-=======
-            if (!isset($this->ignoredHeaders[strtolower($hName)])) {
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                 if ($headers->has($hName)) {
                     $tmp = $headers->getAll($hName);
                     foreach ($tmp as $header) {
@@ -383,11 +375,7 @@ class Swift_Signers_DomainKeySigner implements Swift_Signers_HeaderSigner
     public function addSignature(Swift_Mime_SimpleHeaderSet $headers)
     {
         // Prepare the DomainKey-Signature Header
-<<<<<<< HEAD
         $params = ['a' => $this->hashAlgorithm, 'b' => chunk_split(base64_encode($this->getEncryptedHash() ?? ''), 73, ' '), 'c' => $this->canon, 'd' => $this->domainName, 'h' => implode(': ', $this->signedHeaders), 'q' => 'dns', 's' => $this->selector];
-=======
-        $params = ['a' => $this->hashAlgorithm, 'b' => chunk_split(base64_encode($this->getEncryptedHash()), 73, ' '), 'c' => $this->canon, 'd' => $this->domainName, 'h' => implode(': ', $this->signedHeaders), 'q' => 'dns', 's' => $this->selector];
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
         $string = '';
         foreach ($params as $k => $v) {
             $string .= $k.'='.$v.'; ';

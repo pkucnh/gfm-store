@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-<div class="hero__item set-bg" data-setbg="{{asset('home/img/hero/banner.jpg')}}">
-    <div class="hero__text">
-        <span> Hoa quả tươi sạch</span>
-        <h2>Rau quả <br />100% hữu cơ</h2>
-        <p>Nhận và giao hàng miễn phí chỉ từ 99k</p>
-        <a href="#" class="primary-btn">Mua ngay</a>
-    </div>
-=======
 <!-- <div class="hero__item set-bg" data-setbg="{{asset('admin/banner/banner.jpg')}}">
     <div class="hero__text">
         <span> Hoa quả tươi sạch</span>
@@ -56,5 +47,4 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
 </div>

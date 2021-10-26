@@ -141,11 +141,7 @@ class Swift_Transport_EsmtpTransport extends Swift_Transport_AbstractSmtpTranspo
      */
     public function setEncryption($encryption)
     {
-<<<<<<< HEAD
         $encryption = strtolower($encryption ?? '');
-=======
-        $encryption = strtolower($encryption);
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
         if ('tls' == $encryption) {
             $this->params['protocol'] = 'tcp';
             $this->params['tls'] = true;
@@ -410,11 +406,7 @@ class Swift_Transport_EsmtpTransport extends Swift_Transport_AbstractSmtpTranspo
     private function getCapabilities($ehloResponse)
     {
         $capabilities = [];
-<<<<<<< HEAD
         $ehloResponse = trim($ehloResponse ?? '');
-=======
-        $ehloResponse = trim($ehloResponse);
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
         $lines = explode("\r\n", $ehloResponse);
         array_shift($lines);
         foreach ($lines as $line) {

@@ -105,13 +105,8 @@ class SanctumServiceProvider extends ServiceProvider
     /**
      * Register the guard.
      *
-<<<<<<< HEAD
      * @param  \Illuminate\Contracts\Auth\Factory  $auth
      * @param  array  $config
-=======
-     * @param \Illuminate\Contracts\Auth\Factory  $auth
-     * @param array $config
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
      * @return RequestGuard
      */
     protected function createGuard($auth, $config)

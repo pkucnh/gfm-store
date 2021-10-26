@@ -162,7 +162,6 @@ trait CompilesComponents
     }
 
     /**
-<<<<<<< HEAD
      * Compile the aware statement into valid PHP.
      *
      * @param  string  $expression
@@ -177,8 +176,6 @@ trait CompilesComponents
     }
 
     /**
-=======
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
      * Sanitize the given component attribute value.
      *
      * @param  mixed  $value

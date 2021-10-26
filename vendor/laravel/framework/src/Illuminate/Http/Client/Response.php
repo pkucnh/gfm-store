@@ -283,7 +283,6 @@ class Response implements ArrayAccess
     }
 
     /**
-<<<<<<< HEAD
      * Throw an exception if a server or client error occurred and the given condition evaluates to true.
      *
      * @param  bool  $condition
@@ -297,8 +296,6 @@ class Response implements ArrayAccess
     }
 
     /**
-=======
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
      * Determine if the given offset exists.
      *
      * @param  string  $offset

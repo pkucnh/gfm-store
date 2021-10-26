@@ -12,11 +12,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="blog__item">
                         <div class="blog__item__pic">
-<<<<<<< HEAD
-                            <img src="img/blog/blog-1.jpg" alt="">
-=======
                             <img src="{{asset('home/img/blog/blog-1.jpg')}}" alt="">
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                         </div>
                         <div class="blog__item__text">
                             <ul>
@@ -31,11 +27,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="blog__item">
                         <div class="blog__item__pic">
-<<<<<<< HEAD
-                            <img src="img/blog/blog-2.jpg" alt="">
-=======
                             <img src="{{asset('home/img/blog/blog-2.jpg')}}" alt="">
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                         </div>
                         <div class="blog__item__text">
                             <ul>
@@ -50,11 +42,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="blog__item">
                         <div class="blog__item__pic">
-<<<<<<< HEAD
-                            <img src="img/blog/blog-3.jpg" alt="">
-=======
                             <img src="{{asset('home/img/blog/blog-3.jpg')}}" alt="">
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                         </div>
                         <div class="blog__item__text">
                             <ul>

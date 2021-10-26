@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 @extends('admin.layout.index')
-=======
-@extends('admin.layout_admin.index')
->>>>>>> 70f6a11f6dbf0d4cfa10d7db3cb4d4e9133cbd6b
 
 @section('title')
 <title>GFM | Category-Admin</title>
@@ -35,17 +31,12 @@
                                     </div>
                                 </div>
                                 <div class="row form-group">
-<<<<<<< HEAD
+
                                 <div class="col col-md-3"><label for="select" class=" form-control-label">Tình trạng</label></div>
                                 <div class="col-12 col-md-9">
                                     <select name="status" id="select" class="form-control">
                                         @if($category->status > 0)
-=======
-                                <div class="col col-md-3"><label for="select" class=" form-control-label">An hien</label></div>
-                                <div class="col-12 col-md-9">
-                                    <select name="status" id="select" class="form-control">
-                                        @if($category->image > 0)
->>>>>>> 70f6a11f6dbf0d4cfa10d7db3cb4d4e9133cbd6b
+
                                             <option value="1" selected>Hiện</option> 
                                             <option value="0">Ẩn </option>
                                         @else

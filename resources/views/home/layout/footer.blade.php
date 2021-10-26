@@ -42,17 +42,10 @@
                             <button type="submit " class="site-btn ">Đăng Ký</button>
                         </form>
                         <div class="footer__widget__social ">
-<<<<<<< HEAD
-                            <a href="# "><i class="fa fa-facebook "></i></a>
-                            <a href="# "><i class="fa fa-instagram "></i></a>
-                            <a href="# "><i class="fa fa-twitter "></i></a>
-                            <a href="# "><i class="fa fa-pinterest "></i></a>
-=======
                             <a href="# "><i class="fab fa-facebook-f "></i></a>
                             <a href="# "><i class="fab fa-instagram "></i></a>
                             <a href="# "><i class="fab fa-twitter "></i></a>
                             <a href="# "><i class="fab fa-pinterest "></i></a>
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                         </div>
                     </div>
                 </div>
@@ -80,11 +73,7 @@
     <!-- Js Plugins -->
     <script src="{{asset('home/js/jquery-3.3.1.min.js')}}"></script>
     <script src="{{asset('home/js/bootstrap.min.js')}}"></script>
-<<<<<<< HEAD
-    <script src="{{asset('home/js/jquery.nice-select.min.js ')}}"></script>
-=======
     <!-- <script src="{{asset('home/js/jquery.nice-select.min.js ')}}"></script> -->
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
     <script src="{{asset('home/js/jquery-ui.min.js ')}}"></script>
     <script src="{{asset('home/js/jquery.slicknav.js ')}}"></script>
     <script src="{{asset('home/js/mixitup.min.js ')}}"></script>
@@ -94,8 +83,6 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
     {!! Toastr::message() !!} -->
-<<<<<<< HEAD
-=======
     <script>
         $(document).ready(function (){
         $('.dropdown-menu .icon-menu').click(function () {
@@ -216,8 +203,9 @@
                 confirmButtonText: 'Tiếp tục'
                 }).then((result) => {
                 if (result.isConfirmed) {
-                    // var name = $('.last_name').val();
-                    var name = $('.name').val();
+                    var name = $('.last').val() + $('.first').val();
+                    // var last = $('.last').val();
+                    // var first = $('.first').val();
                     var phone = $('.phone').val();
                     var email = $('.email').val();
                     var address = $('.address').val();
@@ -231,7 +219,7 @@
                     $.ajax({
                         url: '{{url('/confirm-order')}}',
                         method: 'POST',
-                        data:{name:name,phone:phone, email:email,address:address,note:note, order_feeship:order_feeship, order_coupon:order_coupon,_token :_token },
+                        data:{name:name, phone:phone, email:email,address:address,note:note, order_feeship:order_feeship, order_coupon:order_coupon,_token :_token },
                             success:function(){
                                 Swal.fire(
                                     'Thành công!',
@@ -250,6 +238,31 @@
     });
     });
 </script>
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
+
+<!-- // thích sản phẩm -->
+<script type="text/javascript">
+        $(document).ready(function(){
+            $('.like-product').click(function(){
+                var id = $(this).data('id');
+                var product_id =  $('.cart_product_id_'+ id).val();
+                var _token = $('input[name="_token"]').val();
+                // console.log(id,product_id);
+                    $.ajax({
+                    url: '{{url('/like-product')}}',
+                    method: 'POST',
+                    data:{product_id:product_id,_token:_token},
+                        success:function(data){
+                            // location.reload();
+                            Swal.fire(
+                                    'Thành công!',
+                                    'Tim thành công.',
+                                    'success'
+                                    );
+                            }
+                        
+                    })
+            })
+        });
+    </script>
 </body>
 </html>

@@ -15,10 +15,7 @@ use Illuminate\Support\HigherOrderWhenProxy;
 use JsonSerializable;
 use Symfony\Component\VarDumper\VarDumper;
 use Traversable;
-<<<<<<< HEAD
 use UnexpectedValueException;
-=======
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
 
 /**
  * @property-read HigherOrderCollectionProxy $average
@@ -749,7 +746,22 @@ trait EnumeratesValues
     }
 
     /**
-<<<<<<< HEAD
+     * Reduce the collection to multiple aggregate values.
+     *
+     * @param  callable  $callback
+     * @param  mixed  ...$initial
+     * @return array
+     *
+     * @deprecated Use "reduceSpread" instead
+     *
+     * @throws \UnexpectedValueException
+     */
+    public function reduceMany(callable $callback, ...$initial)
+    {
+        return $this->reduceSpread($callback, ...$initial);
+    }
+
+    /**
      * Reduce the collection to multiple aggregate values.
      *
      * @param  callable  $callback
@@ -758,7 +770,7 @@ trait EnumeratesValues
      *
      * @throws \UnexpectedValueException
      */
-    public function reduceMany(callable $callback, ...$initial)
+    public function reduceSpread(callable $callback, ...$initial)
     {
         $result = $initial;
 
@@ -777,8 +789,6 @@ trait EnumeratesValues
     }
 
     /**
-=======
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
      * Reduce an associative collection to a single value.
      *
      * @param  callable  $callback

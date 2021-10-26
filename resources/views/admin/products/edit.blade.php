@@ -1,4 +1,4 @@
-@extends('admin.layout_admin.index')
+@extends('admin.layout.index')
 
 @section('title')
 <title>GFM | Category-Admin</title>
@@ -41,13 +41,13 @@
                                         </div>
 
                                         <div class="row form-group">
-                                            <div class="col col-md-3"><label for="name" class=" form-control-label">Ngày nhập sản phẩm</label></div>
-                                            <div class="col-12 col-md-9"><input type="date" id="text-input" value="{{$product->add_day}}" name="add_day" placeholder="........" class="form-control" ></div>
+                                            <div class="col col-md-6"><label for="name" class=" form-control-label">Ngày nhập sản phẩm</label></div>
+                                            <div class="col-12 col-md-12"><input type="date" id="text-input" value="{{$product->add_day}}" name="add_day" placeholder="........" class="form-control" ></div>
                                         </div>
 
                                         <div class="row form-group">
-                                            <div class="col col-md-3"><label for="name" class=" form-control-label">Ngày hết hạn</label></div>
-                                            <div class="col-12 col-md-9"><input type="date" id="text-input" value="{{$product->expired_day}}" name="expired_day" placeholder="........" class="form-control" ></div>
+                                            <div class="col col-md-6"><label for="name" class=" form-control-label">Ngày hết hạn</label></div>
+                                            <div class="col-12 col-md-12"><input type="date" id="text-input" value="{{$product->expired_day}}" name="expired_day" placeholder="........" class="form-control" ></div>
                                         </div>
                                     </div>
 
@@ -70,7 +70,7 @@
                                                         $i = 1;
                                                         $j = 1;
                                                     @endphp
-                                                    @foreach ($gallery as $val)
+                                                    @foreach ($Gallrey as $val)
                                                         <div class="col-md-4">
                                                             <img data-id="{{$val->id}}" id="file" style="width: 150px; height: 150px; cursor: pointer;" class="img_preview_gallery img_preview_gallery_{{$val->id}}" src="{{asset('admin/images/product')}}/{{$val->name}}" alt="">
                                                             <input hidden name="img_gallery_old_{{$i++}}" value="{{$val->name}}" >
@@ -140,9 +140,10 @@
                                       });
                                     </script>
                                 </div>
+                                <input class="btn btn-success float-right" type="submit" value="Cập nhật">
                         </div>
                             <br>
-                            <input class="btn btn-success float-right" type="submit" value="Cập nhật">
+                          
                             </form>      
                         </div>          
                     </div><!-- .content -->

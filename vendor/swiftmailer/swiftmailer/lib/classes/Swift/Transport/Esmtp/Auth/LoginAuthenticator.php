@@ -32,13 +32,8 @@ class Swift_Transport_Esmtp_Auth_LoginAuthenticator implements Swift_Transport_E
     {
         try {
             $agent->executeCommand("AUTH LOGIN\r\n", [334]);
-<<<<<<< HEAD
             $agent->executeCommand(sprintf("%s\r\n", base64_encode($username ?? '')), [334]);
             $agent->executeCommand(sprintf("%s\r\n", base64_encode($password ?? '')), [235]);
-=======
-            $agent->executeCommand(sprintf("%s\r\n", base64_encode($username)), [334]);
-            $agent->executeCommand(sprintf("%s\r\n", base64_encode($password)), [235]);
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
 
             return true;
         } catch (Swift_TransportException $e) {

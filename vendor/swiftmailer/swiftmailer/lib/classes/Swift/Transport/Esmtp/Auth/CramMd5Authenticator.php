@@ -35,11 +35,7 @@ class Swift_Transport_Esmtp_Auth_CramMd5Authenticator implements Swift_Transport
             $challenge = base64_decode(substr($challenge, 4));
             $message = base64_encode(
                 $username.' '.$this->getResponse($password, $challenge)
-<<<<<<< HEAD
             );
-=======
-                );
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
             $agent->executeCommand(sprintf("%s\r\n", $message), [235]);
 
             return true;
