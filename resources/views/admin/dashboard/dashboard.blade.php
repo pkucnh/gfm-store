@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 @extends('admin.layout.index')
+=======
+@extends('admin.layout_admin.index')
+>>>>>>> 70f6a11f6dbf0d4cfa10d7db3cb4d4e9133cbd6b
 
 @section('title')
 <title>GFM | Admin</title>

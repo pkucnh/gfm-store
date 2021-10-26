@@ -53,9 +53,15 @@ return [
         'array' => 'The :attribute must have more than :value items.',
     ],
     'gte' => [
+<<<<<<< HEAD
         'numeric' => 'The :attribute must be greater than or equal to :value.',
         'file' => 'The :attribute must be greater than or equal to :value kilobytes.',
         'string' => 'The :attribute must be greater than or equal to :value characters.',
+=======
+        'numeric' => 'The :attribute must be greater than or equal :value.',
+        'file' => 'The :attribute must be greater than or equal :value kilobytes.',
+        'string' => 'The :attribute must be greater than or equal :value characters.',
+>>>>>>> 70f6a11f6dbf0d4cfa10d7db3cb4d4e9133cbd6b
         'array' => 'The :attribute must have :value items or more.',
     ],
     'image' => 'The :attribute must be an image.',
@@ -73,9 +79,15 @@ return [
         'array' => 'The :attribute must have less than :value items.',
     ],
     'lte' => [
+<<<<<<< HEAD
         'numeric' => 'The :attribute must be less than or equal to :value.',
         'file' => 'The :attribute must be less than or equal to :value kilobytes.',
         'string' => 'The :attribute must be less than or equal to :value characters.',
+=======
+        'numeric' => 'The :attribute must be less than or equal :value.',
+        'file' => 'The :attribute must be less than or equal :value kilobytes.',
+        'string' => 'The :attribute must be less than or equal :value characters.',
+>>>>>>> 70f6a11f6dbf0d4cfa10d7db3cb4d4e9133cbd6b
         'array' => 'The :attribute must not have more than :value items.',
     ],
     'max' => [
