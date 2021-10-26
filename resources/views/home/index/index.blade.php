@@ -197,7 +197,7 @@
     <div id="parallax-image">
         <div class="row h-100">
             <div class="col-md-12 align-self-center">
-                <h1 class="text-center">Chào mừng đến với cửa hàng </h1>
+                <h1 class="text-center"><strong>Chào Mừng Đến Với Cửa Hàng</strong> </h1>
             </div>
         </div>
     </div>
@@ -227,7 +227,7 @@
     <div id="parallax-image2">
         <div class="row h-100">
             <div class="col-md-12 align-self-center">
-                <h1 class="text-center">Rau quả tươi</h1>
+                <h1 class="text-center"><strong>Thực Phẩm Tươi</strong></h1>
             </div>
         </div>
     </div>
@@ -375,7 +375,7 @@
     <div id="parallax-image3">
         <div class="row h-100">
             <div class="col-md-12 align-self-center">
-                <h1 class="text-center">Rau tươi</h1>
+                <h1 class="text-center"><strong>Chia Sẻ Các Mẹo Nấu Ăn</strong> </h1>
             </div>
         </div>
     </div>

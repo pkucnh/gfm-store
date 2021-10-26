@@ -13,8 +13,8 @@
             <div class="user signinBx">
                 <div class="imgBx"><img src="{{asset('home/login/img/3.jpg')}}"></div>
                 <div class="formBx">
-                   
-                    <form>
+                    <form action="{{url('check-login-user')}}" method="post">
+                    @csrf
                         <div style="text-align:center">
                             <img src="{{asset('home/login/img/logo.png')}}" width="70px" height="70px" >
                         </div>
@@ -22,7 +22,7 @@
                         <h2>Đăng nhập</h2>
                         <input type="text" name="email" placeholder="Nhập tài khoản hoặc email">
                         <input type="password" name="password" placeholder="Mật khẩu">
-                        <input type="submit" value="Đăng nhập">
+                        <input type="submit" name="login" value="Đăng nhập">
                         <p class="signup">Bạn chưa có mật khẩu?<a href="#" onclick="toggleForm();">Đăng ký</a></p>
                     </form>
                 </div>

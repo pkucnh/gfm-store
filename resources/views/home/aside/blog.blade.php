@@ -9,22 +9,45 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-6">
+                @foreach($blogs as $blog)
+                <!-- <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="blog__item">
                         <div class="blog__item__pic">
-                            <img src="{{asset('home/img/blog/blog-1.jpg')}}" alt="">
+                            <img src="{{asset('admin/image/blog')}}/{{$blog->image}}" width="300" height="300" alt="">
                         </div>
                         <div class="blog__item__text">
                             <ul>
-                                <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
+                                <li><i class="fa fa-calendar-o"></i> {{$blog->post_day}}"</li>
+                        
                                 <li><i class="fa fa-comment-o"></i> 5</li>
                             </ul>
-                            <h5><a href="#">Mẹo nấu ăn làm cho việc nấu ăn trở nên đơn giản </a></h5>
-                            <p>....</p>
+                           
+                        
+                        </div>
+                        <h5><a href="#">{{$blog->name}} </a></h5>
+                            <p>{{$blog->summary}}</p>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="blog__item">
+                        <div class="blog__item__pic">
+                            <img src="{{asset('admin/image/blog')}}/{{$blog->image}}" width="300" height="300" alt="">
+                        </div>
+                        <div class="blog__item__text">
+                            <ul>
+                            
+                                <!-- $data = strtotime($blog->post_day); -->
+                                <li><i class="fa fa-calendar-o"></i> {{date('d/m/Y H:i:s',strtotime($blog->post_day))}}</li>
+                                <!-- <li><i class="fa fa-comment-o"></i> 5</li> -->
+                            </ul>
+                            <h5><a href="#">{{$blog->name}} </a></h5>
+                            <p>{{$blog->summary}}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
+                @endforeach
+                <!-- <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="blog__item">
                         <div class="blog__item__pic">
                             <img src="{{asset('home/img/blog/blog-2.jpg')}}" alt="">
@@ -53,7 +76,7 @@
                             <p>.... </p>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>

@@ -55,9 +55,7 @@ Route::resource('/coupon',App\Http\Controllers\admin\CouponController::class);
 Route::resource('/blog',App\Http\Controllers\admin\BlogController::class);
 Route::resource('/category_blog',App\Http\Controllers\admin\CategoryBlogController::class);
 
-Route::get('/login', function () {
-    return view('home.page.login');
-});
+
 Route::get('/by-product', 'App\Http\Controllers\home\HomeController@ByProduct');
 
     // ADD-CART
@@ -108,3 +106,7 @@ Route::resource('/child-category',App\Http\Controllers\admin\childCateController
 Route::post('/select-category', [childCateController::class, 'select_category']);
 // Route::post('category/delete', 'App\Http\Controllers\admin\CategoryController@delete')->name('delete');
 
+// dang nhập khách hàng
+Route::get('/login', 'App\Http\Controllers\home\LoginController@LoginUser');
+
+Route::post('/check-login-user', 'App\Http\Controllers\home\LoginController@CheckLoginUser');

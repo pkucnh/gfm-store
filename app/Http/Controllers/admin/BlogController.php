@@ -61,7 +61,8 @@ class BlogController extends Controller
         $blog->slug = Str::slug($data['name'],"-");
         $blog->summary =  $data['summary']; 
         $blog->content =  $data['content']; 
-        $blog->post_day =  $data['post_day']; 
+        // $blog->post_day =  $data['post_day']; 
+        $blog->post_day = now(); 
         $blog->category_id =  $data['category_id']; 
         
         $blog->save();

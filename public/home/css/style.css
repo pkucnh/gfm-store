@@ -37,13 +37,7 @@
 html,
 body {
     height: 100%;
-<<<<<<< HEAD
-    font-family:  SofiaProBoldVh,PingFang SC,Hiragino Sans GB,Microsoft YaHei,微软雅黑,HelveticaNeue,Helvetica,Arial,sans-serif!important;
-    font-smooth: antialiased;
-    
-=======
     font-family: SofiaProBoldVh,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Ã¥Â¾Â®Ã¨Â½Â¯Ã©â€ºâ€¦Ã©Â»â€˜,HelveticaNeue,Helvetica,Arial,sans-serif!important;
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
 }
 
 h1,
@@ -55,11 +49,7 @@ h6 {
     margin: 0;
     color: #111111;
     font-weight: 400;
-<<<<<<< HEAD
-    font-family: SofiaProBoldVh,PingFang SC,Hiragino Sans GB,Microsoft YaHei,微软雅黑,HelveticaNeue,Helvetica,Arial,sans-serif!important;
-=======
     font-family: SofiaProBoldVh,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Ã¥Â¾Â®Ã¨Â½Â¯Ã©â€ºâ€¦Ã©Â»â€˜,HelveticaNeue,Helvetica,Arial,sans-serif!important;
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
 }
 
 h1 {
@@ -79,11 +69,7 @@ h4 {
 }
 
 h5 {
-<<<<<<< HEAD
-    font-size: 18px;
-=======
     font-size: 20px;
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
 }
 
 h6 {
@@ -92,11 +78,7 @@ h6 {
 
 p {
     font-size: 16px;
-<<<<<<< HEAD
-    font-family: "Cairo", sans-serif;
-=======
     font-family: SofiaProBoldVh,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Ã¥Â¾Â®Ã¨Â½Â¯Ã©â€ºâ€¦Ã©Â»â€˜,HelveticaNeue,Helvetica,Arial,sans-serif!important;
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
     color: #6f6f6f;
     font-weight: 400;
     line-height: 26px;
@@ -502,19 +484,11 @@ ol {
 }
 
 .header__menu ul li a {
-<<<<<<< HEAD
-    font-size: 15px;
-    color: #252525;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 1px;
-=======
     font-size: 14px;
     color: #252525;
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 2px;
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
     -webkit-transition: all, 0.3s;
     -moz-transition: all, 0.3s;
     -ms-transition: all, 0.3s;
@@ -1400,9 +1374,6 @@ ol {
     -o-transition: all, 0.3s;
     transition: all, 0.3s;
 }
-<<<<<<< HEAD
-
-=======
 /* button */
 
 .product__item__pic__hover li:hover button {
@@ -1444,7 +1415,6 @@ ol {
 }
 
 /* button */
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
 .product__discount__item__text {
     text-align: center;
     padding-top: 20px;
@@ -1982,11 +1952,7 @@ ol {
 }
 
 .shoping__cart__table table thead th {
-<<<<<<< HEAD
-    font-size: 20px;
-=======
     font-size: 18px;
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
     font-weight: 700;
     color: #1c1c1c;
     padding-bottom: 20px;
@@ -2003,11 +1969,7 @@ ol {
 }
 
 .shoping__cart__table table tbody tr td.shoping__cart__item {
-<<<<<<< HEAD
-    width: 630px;
-=======
     width: 180px;
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
     text-align: left;
 }
 
@@ -2018,27 +1980,11 @@ ol {
 
 .shoping__cart__table table tbody tr td.shoping__cart__item h5 {
     color: #1c1c1c;
-<<<<<<< HEAD
-=======
     font-size: 17px;
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
     display: inline-block;
 }
 
 .shoping__cart__table table tbody tr td.shoping__cart__price {
-<<<<<<< HEAD
-    font-size: 18px;
-    color: #1c1c1c;
-    font-weight: 700;
-    width: 100px;
-}
-
-.shoping__cart__table table tbody tr td.shoping__cart__total {
-    font-size: 18px;
-    color: #1c1c1c;
-    font-weight: 700;
-    width: 110px;
-=======
     font-size: 15px;
     color: #1c1c1c;
     font-weight: 700;
@@ -2050,15 +1996,11 @@ ol {
     color: #1c1c1c;
     font-weight: 700;
     width: 10px;
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
 }
 
 .shoping__cart__table table tbody tr td.shoping__cart__item__close {
     text-align: right;
-<<<<<<< HEAD
-=======
     width: 50px;
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
 }
 
 .shoping__cart__table table tbody tr td.shoping__cart__item__close span {
@@ -2068,11 +2010,7 @@ ol {
 }
 
 .shoping__cart__table table tbody tr td.shoping__cart__quantity {
-<<<<<<< HEAD
-    width: 225px;
-=======
     width: 75px;
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
 }
 
 .shoping__cart__table table tbody tr td.shoping__cart__quantity .pro-qty {
@@ -2143,11 +2081,7 @@ ol {
     background: #f5f5f5;
     padding: 30px;
     padding-top: 20px;
-<<<<<<< HEAD
-    margin-top: 50px;
-=======
     /* margin-top: 50px; */
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
 }
 
 .shoping__checkout h5 {
@@ -2179,11 +2113,7 @@ ol {
 }
 
 .shoping__checkout ul li span {
-<<<<<<< HEAD
-    font-size: 18px;
-=======
     font-size: 14px;
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
     color: #dd2222;
     float: right;
 }
@@ -3604,8 +3534,6 @@ ol {
 }
 
 
-<<<<<<< HEAD
-=======
 
 .featured__item__pic__hover li {
     list-style: none;
@@ -3654,7 +3582,6 @@ ol {
     -o-transition: all, 0.3s;
     transition: all, 0.3s;
 }
->>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
 /* Small Device = 320px */
 
 @media only screen and (max-width: 479px) {

@@ -124,7 +124,12 @@
                                 </ul>
                             </div>
                             <div class="header__top__right__auth">
-                                <a href="#"><i class="fa fa-user"></i> Đăng nhập</a>
+                            @if(Session('customer_name'))
+                                <a href="#"><i class="fa fa-user"></i>{{Session('customer_name')}}</a>
+                            @else
+                                <a href="{{url('login')}}"><i class="fa fa-user"></i> Đăng nhập</a>
+                            @endif
+                    
                             </div>
                         </div>
                     </div>

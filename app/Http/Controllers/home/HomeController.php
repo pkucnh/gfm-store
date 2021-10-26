@@ -8,6 +8,8 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\Gallrey;
 use App\Models\Rating;
+use App\Models\Blog;
+use App\Models\CategoryBlog;
 use Toastr;
 use Carbon\Carbon;
 
@@ -21,11 +23,13 @@ class HomeController extends Controller
     public function index()
     {
         $products = Category::join('product', 'product.category_id', '=', 'category.id')->select(('category.name as name_cate'), ('category.slug as slug_cate'),'product.*')->get();
+        $blogs = Blog::get();
         $category = Category::where('status','=',1)->get();
         $product_view = Product::orderbyDesc('views')->paginate(3);
         $product_new = Product::orderbyDesc('id')->paginate(3);
         $product_like = Product::orderbyDesc('like')->paginate(3);
         $data = [
+            'blogs' => $blogs,
             'category' => $category,
             'products' => $products,
             'product_view' => $product_view,
@@ -105,7 +109,7 @@ class HomeController extends Controller
                 <div class="d-flex flex-row user-info"><img class="rounded-circle" src="'.asset('admin/images/user/user.jpg').'" width="37" height="37">
                     <div class="d-flex flex-column justify-content-start ml-2">
                     <span class="d-block font-weight-bold name">'.$com->name.' - <span class="">'.$com->rating.'</span><i class="fa fa-star" style="color: rgb(228, 228, 8)"></i></span>               
-                    <span class="date text-black-50">'.$com->time.'</span></div>
+                    <span class="date text-black-50">'.date('d/m/Y H:i:s',strtotime($com->time)).'</span></div>
                 </div>
                 <div class="mt-2 bg-light " >
                     <p class="comment-text">'.$com->content.'</p>
