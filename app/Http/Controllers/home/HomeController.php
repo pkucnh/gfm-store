@@ -8,6 +8,11 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\Gallrey;
 use App\Models\Rating;
+use App\Models\Blog;
+use App\Models\CategoryBlog;
+
+
+
 use Toastr;
 
 class HomeController extends Controller

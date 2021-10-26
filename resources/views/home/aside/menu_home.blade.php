@@ -9,7 +9,13 @@
                         </div>
                         <ul>
                             @foreach($category as $row)
-                            <li><a href="#">{{$row->name}}</a></li>
+                            <li class="dropdown"><a href="#">{{$row->name}}</a>
+                                    <ul>
+                                        <li>
+                                                dada
+                                        </li>
+                                    </ul>
+                           </li>
                             @endforeach
                         </ul>
                     </div>
@@ -37,3 +43,4 @@
             </div>
         </div>
     </section>
+    <link rel="stylesheet" href="style.css">

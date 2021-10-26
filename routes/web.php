@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\home\HomeController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\CategoryController;
+use App\Http\Controllers\admin\BlogController;
+use App\Http\Controllers\admin\CategoryBlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +39,5 @@ Route::post('/load-comment', 'App\Http\Controllers\home\HomeController@LoadComme
 Route::resource('/category',App\Http\Controllers\admin\CategoryController::class);
 Route::resource('/product',App\Http\Controllers\admin\ProductController::class);
 Route::resource('/coupon',App\Http\Controllers\admin\CouponController::class);
+Route::resource('/blog',App\Http\Controllers\admin\BlogController::class);
+Route::resource('/category_blog',App\Http\Controllers\admin\CategoryBlogController::class);
