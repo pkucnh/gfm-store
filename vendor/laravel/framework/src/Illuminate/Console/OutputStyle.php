@@ -68,6 +68,7 @@ class OutputStyle extends SymfonyStyle
     {
         return $this->output->isDebug();
     }
+<<<<<<< HEAD
 
     /**
      * Get the underlying Symfony output implementation.
@@ -78,4 +79,6 @@ class OutputStyle extends SymfonyStyle
     {
         return $this->output;
     }
+=======
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
 }

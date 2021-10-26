@@ -25,6 +25,7 @@ trait ManagesComponents
     protected $componentData = [];
 
     /**
+<<<<<<< HEAD
      * The component data for the component that is currently being rendered.
      *
      * @var array
@@ -32,6 +33,8 @@ trait ManagesComponents
     protected $currentComponentData = [];
 
     /**
+=======
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
      * The slot contents for the component.
      *
      * @var array
@@ -88,6 +91,7 @@ trait ManagesComponents
     {
         $view = array_pop($this->componentStack);
 
+<<<<<<< HEAD
         $this->currentComponentData = array_merge(
             $previousComponentData = $this->currentComponentData,
             $data = $this->componentData()
@@ -105,6 +109,18 @@ trait ManagesComponents
             }
         } finally {
             $this->currentComponentData = $previousComponentData;
+=======
+        $data = $this->componentData();
+
+        $view = value($view, $data);
+
+        if ($view instanceof View) {
+            return $view->with($data)->render();
+        } elseif ($view instanceof Htmlable) {
+            return $view->toHtml();
+        } else {
+            return $this->make($view, $data)->render();
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
         }
     }
 
@@ -130,6 +146,7 @@ trait ManagesComponents
     }
 
     /**
+<<<<<<< HEAD
      * Get an item from the component data that exists above the current component.
      *
      * @param  string  $key
@@ -160,6 +177,8 @@ trait ManagesComponents
     }
 
     /**
+=======
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
      * Start the slot rendering process.
      *
      * @param  string  $name
@@ -207,6 +226,7 @@ trait ManagesComponents
     {
         return count($this->componentStack) - 1;
     }
+<<<<<<< HEAD
 
     /**
      * Flush all of the component state.
@@ -219,4 +239,6 @@ trait ManagesComponents
         $this->componentData = [];
         $this->currentComponentData = [];
     }
+=======
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
 }

@@ -9,6 +9,7 @@
                         </div>
                         <ul>
                             @foreach($category as $row)
+<<<<<<< HEAD
                             <li class="dropdown"><a href="#">{{$row->name}}</a>
                                     <ul>
                                         <li>
@@ -16,6 +17,9 @@
                                         </li>
                                     </ul>
                            </li>
+=======
+                            <li><a href="#">{{$row->name}}</a></li>
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                             @endforeach
                         </ul>
                     </div>
@@ -33,7 +37,11 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="hero__search__phone__text">
+<<<<<<< HEAD
                                 <h5>+65 11.188.888</h5>
+=======
+                                <h5>+84 81.799.175</h5>
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                                 <span>Hỗ trợ 24/7</span>
                             </div>
                         </div>
@@ -42,5 +50,10 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
     </section>
     <link rel="stylesheet" href="style.css">
+=======
+        
+    </section>
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3

@@ -33,7 +33,11 @@ class ExecutionLoopClosure extends ExecutionClosure
             // Restore execution scope variables
             \extract($__psysh__->getScopeVariables(false));
 
+<<<<<<< HEAD
             while (true) {
+=======
+            do {
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                 $__psysh__->beforeLoop();
 
                 try {
@@ -96,7 +100,11 @@ class ExecutionLoopClosure extends ExecutionClosure
                 }
 
                 $__psysh__->afterLoop();
+<<<<<<< HEAD
             }
+=======
+            } while (true);
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
         });
     }
 }

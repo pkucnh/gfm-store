@@ -33,7 +33,11 @@ class Application extends Container implements ApplicationContract, CachesConfig
      *
      * @var string
      */
+<<<<<<< HEAD
     const VERSION = '8.64.0';
+=======
+    const VERSION = '8.63.0';
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
 
     /**
      * The base path for the Laravel installation.
@@ -1104,7 +1108,11 @@ class Application extends Container implements ApplicationContract, CachesConfig
      * @param  int  $code
      * @param  string  $message
      * @param  array  $headers
+<<<<<<< HEAD
      * @return never
+=======
+     * @return void
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
      *
      * @throws \Symfony\Component\HttpKernel\Exception\HttpException
      * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException

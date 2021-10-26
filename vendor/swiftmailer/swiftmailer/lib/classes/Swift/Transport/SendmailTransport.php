@@ -111,7 +111,11 @@ class Swift_Transport_SendmailTransport extends Swift_Transport_AbstractSmtpTran
             }
 
             if (false === strpos($command, ' -f')) {
+<<<<<<< HEAD
                 $command .= ' -f'.escapeshellarg($this->getReversePath($message) ?? '');
+=======
+                $command .= ' -f'.escapeshellarg($this->getReversePath($message));
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
             }
 
             $buffer->initialize(array_merge($this->params, ['command' => $command]));

@@ -48,7 +48,11 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class Shell extends Application
 {
+<<<<<<< HEAD
     const VERSION = 'v0.10.9';
+=======
+    const VERSION = 'v0.10.8';
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
 
     const PROMPT = '>>> ';
     const BUFF_PROMPT = '... ';
@@ -1346,7 +1350,11 @@ class Shell extends Application
     /**
      * Get the current input prompt.
      *
+<<<<<<< HEAD
      * @return string|null
+=======
+     * @return string | null
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
      */
     protected function getPrompt()
     {

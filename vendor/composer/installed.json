@@ -723,6 +723,7 @@
         },
         {
             "name": "facade/ignition",
+<<<<<<< HEAD
             "version": "2.15.0",
             "version_normalized": "2.15.0.0",
             "source": {
@@ -738,6 +739,22 @@
             },
             "require": {
                 "ext-curl": "*",
+=======
+            "version": "2.14.1",
+            "version_normalized": "2.14.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/facade/ignition.git",
+                "reference": "6d89c4c99537f487ad29f646d57ebf107ef714ed"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/facade/ignition/zipball/6d89c4c99537f487ad29f646d57ebf107ef714ed",
+                "reference": "6d89c4c99537f487ad29f646d57ebf107ef714ed",
+                "shasum": ""
+            },
+            "require": {
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                 "ext-json": "*",
                 "ext-mbstring": "*",
                 "facade/flare-client-php": "^1.9.1",
@@ -757,7 +774,11 @@
             "suggest": {
                 "laravel/telescope": "^3.1"
             },
+<<<<<<< HEAD
             "time": "2021-10-11T15:24:06+00:00",
+=======
+            "time": "2021-10-08T12:34:52+00:00",
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1081,6 +1102,7 @@
         },
         {
             "name": "graham-campbell/result-type",
+<<<<<<< HEAD
             "version": "v1.0.3",
             "version_normalized": "1.0.3.0",
             "source": {
@@ -1092,6 +1114,19 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/GrahamCampbell/Result-Type/zipball/296c015dc30ec4322168c5ad3ee5cc11dae827ac",
                 "reference": "296c015dc30ec4322168c5ad3ee5cc11dae827ac",
+=======
+            "version": "v1.0.2",
+            "version_normalized": "1.0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GrahamCampbell/Result-Type.git",
+                "reference": "84afea85c6841deeea872f36249a206e878a5de0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GrahamCampbell/Result-Type/zipball/84afea85c6841deeea872f36249a206e878a5de0",
+                "reference": "84afea85c6841deeea872f36249a206e878a5de0",
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                 "shasum": ""
             },
             "require": {
@@ -1101,7 +1136,11 @@
             "require-dev": {
                 "phpunit/phpunit": "^6.5.14 || ^7.5.20 || ^8.5.19 || ^9.5.8"
             },
+<<<<<<< HEAD
             "time": "2021-10-17T19:48:54+00:00",
+=======
+            "time": "2021-08-28T21:34:50+00:00",
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -1129,7 +1168,11 @@
             ],
             "support": {
                 "issues": "https://github.com/GrahamCampbell/Result-Type/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/GrahamCampbell/Result-Type/tree/v1.0.3"
+=======
+                "source": "https://github.com/GrahamCampbell/Result-Type/tree/v1.0.2"
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
             },
             "funding": [
                 {
@@ -1145,6 +1188,7 @@
         },
         {
             "name": "guzzlehttp/guzzle",
+<<<<<<< HEAD
             "version": "7.4.0",
             "version_normalized": "7.4.0.0",
             "source": {
@@ -1156,15 +1200,35 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/guzzle/guzzle/zipball/868b3571a039f0ebc11ac8f344f4080babe2cb94",
                 "reference": "868b3571a039f0ebc11ac8f344f4080babe2cb94",
+=======
+            "version": "7.3.0",
+            "version_normalized": "7.3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/guzzle.git",
+                "reference": "7008573787b430c1c1f650e3722d9bba59967628"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/7008573787b430c1c1f650e3722d9bba59967628",
+                "reference": "7008573787b430c1c1f650e3722d9bba59967628",
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
+<<<<<<< HEAD
                 "guzzlehttp/promises": "^1.5",
                 "guzzlehttp/psr7": "^1.8.3 || ^2.1",
                 "php": "^7.2.5 || ^8.0",
                 "psr/http-client": "^1.0",
                 "symfony/deprecation-contracts": "^2.2"
+=======
+                "guzzlehttp/promises": "^1.4",
+                "guzzlehttp/psr7": "^1.7 || ^2.0",
+                "php": "^7.2.5 || ^8.0",
+                "psr/http-client": "^1.0"
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
             },
             "provide": {
                 "psr/http-client-implementation": "1.0"
@@ -1174,18 +1238,30 @@
                 "ext-curl": "*",
                 "php-http/client-integration-tests": "^3.0",
                 "phpunit/phpunit": "^8.5.5 || ^9.3.5",
+<<<<<<< HEAD
                 "psr/log": "^1.1 || ^2.0 || ^3.0"
+=======
+                "psr/log": "^1.1"
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
             },
             "suggest": {
                 "ext-curl": "Required for CURL handler support",
                 "ext-intl": "Required for Internationalized Domain Name (IDN) support",
                 "psr/log": "Required for using the Log middleware"
             },
+<<<<<<< HEAD
             "time": "2021-10-18T09:52:00+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "7.4-dev"
+=======
+            "time": "2021-03-23T11:33:13+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "7.3-dev"
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                 }
             },
             "installation-source": "dist",
@@ -1203,16 +1279,20 @@
             ],
             "authors": [
                 {
+<<<<<<< HEAD
                     "name": "Graham Campbell",
                     "email": "hello@gjcampbell.co.uk",
                     "homepage": "https://github.com/GrahamCampbell"
                 },
                 {
+=======
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                     "name": "Michael Dowling",
                     "email": "mtdowling@gmail.com",
                     "homepage": "https://github.com/mtdowling"
                 },
                 {
+<<<<<<< HEAD
                     "name": "Jeremy Lindblom",
                     "email": "jeremeamia@gmail.com",
                     "homepage": "https://github.com/jeremeamia"
@@ -1239,6 +1319,15 @@
                 }
             ],
             "description": "Guzzle is a PHP HTTP client library",
+=======
+                    "name": "Márk Sági-Kazár",
+                    "email": "mark.sagikazar@gmail.com",
+                    "homepage": "https://sagikazarmark.hu"
+                }
+            ],
+            "description": "Guzzle is a PHP HTTP client library",
+            "homepage": "http://guzzlephp.org/",
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
             "keywords": [
                 "client",
                 "curl",
@@ -1252,7 +1341,11 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/guzzle/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/guzzle/guzzle/tree/7.4.0"
+=======
+                "source": "https://github.com/guzzle/guzzle/tree/7.3.0"
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
             },
             "funding": [
                 {
@@ -1264,8 +1357,17 @@
                     "type": "github"
                 },
                 {
+<<<<<<< HEAD
                     "url": "https://tidelift.com/funding/github/packagist/guzzlehttp/guzzle",
                     "type": "tidelift"
+=======
+                    "url": "https://github.com/alexeyshockov",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/gmponos",
+                    "type": "github"
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                 }
             ],
             "install-path": "../guzzlehttp/guzzle"
@@ -1531,6 +1633,7 @@
         },
         {
             "name": "laravel/framework",
+<<<<<<< HEAD
             "version": "v8.64.0",
             "version_normalized": "8.64.0.0",
             "source": {
@@ -1542,6 +1645,19 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/3337c029e1bb31d9712d27437cc27010ba302c9e",
                 "reference": "3337c029e1bb31d9712d27437cc27010ba302c9e",
+=======
+            "version": "v8.63.0",
+            "version_normalized": "8.63.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "8f3d280f36a427730c8c8fa34316c79eed38781e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/8f3d280f36a427730c8c8fa34316c79eed38781e",
+                "reference": "8f3d280f36a427730c8c8fa34316c79eed38781e",
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                 "shasum": ""
             },
             "require": {
@@ -1658,7 +1774,11 @@
                 "symfony/psr-http-message-bridge": "Required to use PSR-7 bridging features (^2.0).",
                 "wildbit/swiftmailer-postmark": "Required to use Postmark mail driver (^3.0)."
             },
+<<<<<<< HEAD
             "time": "2021-10-12T13:43:13+00:00",
+=======
+            "time": "2021-10-05T14:04:25+00:00",
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1705,6 +1825,7 @@
         },
         {
             "name": "laravel/sail",
+<<<<<<< HEAD
             "version": "v1.12.0",
             "version_normalized": "1.12.0.0",
             "source": {
@@ -1716,6 +1837,19 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/sail/zipball/80f6cd93844e87ebc2e7310f9a9b9917473f5eb0",
                 "reference": "80f6cd93844e87ebc2e7310f9a9b9917473f5eb0",
+=======
+            "version": "v1.11.0",
+            "version_normalized": "1.11.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/sail.git",
+                "reference": "5c91d33949e43500dc1d49abc5d7c2ffb6c96f44"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/5c91d33949e43500dc1d49abc5d7c2ffb6c96f44",
+                "reference": "5c91d33949e43500dc1d49abc5d7c2ffb6c96f44",
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                 "shasum": ""
             },
             "require": {
@@ -1724,7 +1858,11 @@
                 "illuminate/support": "^8.0|^9.0",
                 "php": "^7.3|^8.0"
             },
+<<<<<<< HEAD
             "time": "2021-10-12T15:38:11+00:00",
+=======
+            "time": "2021-10-01T13:32:17+00:00",
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
             "bin": [
                 "bin/sail"
             ],
@@ -1768,6 +1906,7 @@
         },
         {
             "name": "laravel/sanctum",
+<<<<<<< HEAD
             "version": "v2.11.4",
             "version_normalized": "2.11.4.0",
             "source": {
@@ -1779,6 +1918,19 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/sanctum/zipball/2cc0c0f79eb92578f606f6130fafd31b18229db1",
                 "reference": "2cc0c0f79eb92578f606f6130fafd31b18229db1",
+=======
+            "version": "v2.11.2",
+            "version_normalized": "2.11.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/sanctum.git",
+                "reference": "b21e65cbe13896946986cb0868180cd69e1bd5d3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/sanctum/zipball/b21e65cbe13896946986cb0868180cd69e1bd5d3",
+                "reference": "b21e65cbe13896946986cb0868180cd69e1bd5d3",
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                 "shasum": ""
             },
             "require": {
@@ -1793,7 +1945,11 @@
                 "orchestra/testbench": "^4.0|^5.0|^6.0",
                 "phpunit/phpunit": "^8.0|^9.3"
             },
+<<<<<<< HEAD
             "time": "2021-10-13T13:38:15+00:00",
+=======
+            "time": "2021-06-15T15:56:21+00:00",
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2658,6 +2814,7 @@
         },
         {
             "name": "nette/schema",
+<<<<<<< HEAD
             "version": "v1.2.2",
             "version_normalized": "1.2.2.0",
             "source": {
@@ -2674,13 +2831,35 @@
             "require": {
                 "nette/utils": "^2.5.7 || ^3.1.5 ||  ^4.0",
                 "php": ">=7.1 <8.2"
+=======
+            "version": "v1.2.1",
+            "version_normalized": "1.2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nette/schema.git",
+                "reference": "f5ed39fc96358f922cedfd1e516f0dadf5d2be0d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nette/schema/zipball/f5ed39fc96358f922cedfd1e516f0dadf5d2be0d",
+                "reference": "f5ed39fc96358f922cedfd1e516f0dadf5d2be0d",
+                "shasum": ""
+            },
+            "require": {
+                "nette/utils": "^3.1.4 || ^4.0",
+                "php": ">=7.1 <8.1"
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
             },
             "require-dev": {
                 "nette/tester": "^2.3 || ^2.4",
                 "phpstan/phpstan-nette": "^0.12",
                 "tracy/tracy": "^2.7"
             },
+<<<<<<< HEAD
             "time": "2021-10-15T11:40:02+00:00",
+=======
+            "time": "2021-03-04T17:51:11+00:00",
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2717,7 +2896,11 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/schema/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/nette/schema/tree/v1.2.2"
+=======
+                "source": "https://github.com/nette/schema/tree/v1.2.1"
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
             },
             "install-path": "../nette/schema"
         },
@@ -4167,6 +4350,7 @@
         },
         {
             "name": "psr/log",
+<<<<<<< HEAD
             "version": "1.1.4",
             "version_normalized": "1.1.4.0",
             "source": {
@@ -4188,12 +4372,39 @@
             "extra": {
                 "branch-alias": {
                     "dev-master": "1.1.x-dev"
+=======
+            "version": "2.0.0",
+            "version_normalized": "2.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/log.git",
+                "reference": "ef29f6d262798707a9edd554e2b82517ef3a9376"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/ef29f6d262798707a9edd554e2b82517ef3a9376",
+                "reference": "ef29f6d262798707a9edd554e2b82517ef3a9376",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0.0"
+            },
+            "time": "2021-07-14T16:41:46+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                 }
             },
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
+<<<<<<< HEAD
                     "Psr\\Log\\": "Psr/Log/"
+=======
+                    "Psr\\Log\\": "src"
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -4214,7 +4425,11 @@
                 "psr-3"
             ],
             "support": {
+<<<<<<< HEAD
                 "source": "https://github.com/php-fig/log/tree/1.1.4"
+=======
+                "source": "https://github.com/php-fig/log/tree/2.0.0"
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
             },
             "install-path": "../psr/log"
         },
@@ -4274,6 +4489,7 @@
         },
         {
             "name": "psy/psysh",
+<<<<<<< HEAD
             "version": "v0.10.9",
             "version_normalized": "0.10.9.0",
             "source": {
@@ -4285,6 +4501,19 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/bobthecow/psysh/zipball/01281336c4ae557fe4a994544f30d3a1bc204375",
                 "reference": "01281336c4ae557fe4a994544f30d3a1bc204375",
+=======
+            "version": "v0.10.8",
+            "version_normalized": "0.10.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bobthecow/psysh.git",
+                "reference": "e4573f47750dd6c92dca5aee543fa77513cbd8d3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/e4573f47750dd6c92dca5aee543fa77513cbd8d3",
+                "reference": "e4573f47750dd6c92dca5aee543fa77513cbd8d3",
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                 "shasum": ""
             },
             "require": {
@@ -4306,7 +4535,11 @@
                 "ext-readline": "Enables support for arrow-key history navigation, and showing and manipulating command history.",
                 "hoa/console": "A pure PHP readline implementation. You'll want this if your PHP install doesn't already support readline or libedit."
             },
+<<<<<<< HEAD
             "time": "2021-10-10T13:37:39+00:00",
+=======
+            "time": "2021-04-10T16:23:39+00:00",
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
             "bin": [
                 "bin/psysh"
             ],
@@ -4346,7 +4579,11 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/psysh/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/bobthecow/psysh/tree/v0.10.9"
+=======
+                "source": "https://github.com/bobthecow/psysh/tree/v0.10.8"
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
             },
             "install-path": "../psy/psysh"
         },
@@ -5594,6 +5831,7 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
+<<<<<<< HEAD
             "version": "v6.3.0",
             "version_normalized": "6.3.0.0",
             "source": {
@@ -5605,6 +5843,19 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/8a5d5072dca8f48460fce2f4131fcc495eec654c",
                 "reference": "8a5d5072dca8f48460fce2f4131fcc495eec654c",
+=======
+            "version": "v6.2.7",
+            "version_normalized": "6.2.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/swiftmailer/swiftmailer.git",
+                "reference": "15f7faf8508e04471f666633addacf54c0ab5933"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/15f7faf8508e04471f666633addacf54c0ab5933",
+                "reference": "15f7faf8508e04471f666633addacf54c0ab5933",
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                 "shasum": ""
             },
             "require": {
@@ -5616,12 +5867,20 @@
             },
             "require-dev": {
                 "mockery/mockery": "^1.0",
+<<<<<<< HEAD
                 "symfony/phpunit-bridge": "^4.4|^5.4"
+=======
+                "symfony/phpunit-bridge": "^4.4|^5.0"
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
             },
             "suggest": {
                 "ext-intl": "Needed to support internationalized email addresses"
             },
+<<<<<<< HEAD
             "time": "2021-10-18T15:26:12+00:00",
+=======
+            "time": "2021-03-09T12:30:35+00:00",
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -5656,7 +5915,11 @@
             ],
             "support": {
                 "issues": "https://github.com/swiftmailer/swiftmailer/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/swiftmailer/swiftmailer/tree/v6.3.0"
+=======
+                "source": "https://github.com/swiftmailer/swiftmailer/tree/v6.2.7"
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
             },
             "funding": [
                 {

@@ -2,10 +2,13 @@
 
 All notable changes to `ignition` will be documented in this fil
 
+<<<<<<< HEAD
 ## 2.15.0 - 2021-10-11
 
 - improve output of flare:test
 
+=======
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
 ## 2.14.1 - 2021-10-08
 
 - update base URL for Flare

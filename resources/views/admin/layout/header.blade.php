@@ -313,6 +313,7 @@
               </li>
             </ul>
           </li>
+<<<<<<< HEAD
 
           <!-- blog -->
         <li class="nav-item">
@@ -351,6 +352,8 @@
             </ul>
           </li>
 
+=======
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
           <li class="nav-header">EXAMPLES</li>
         </ul>
       </nav>

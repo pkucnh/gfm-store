@@ -42,10 +42,17 @@
                             <button type="submit " class="site-btn ">Đăng Ký</button>
                         </form>
                         <div class="footer__widget__social ">
+<<<<<<< HEAD
                             <a href="# "><i class="fa fa-facebook "></i></a>
                             <a href="# "><i class="fa fa-instagram "></i></a>
                             <a href="# "><i class="fa fa-twitter "></i></a>
                             <a href="# "><i class="fa fa-pinterest "></i></a>
+=======
+                            <a href="# "><i class="fab fa-facebook-f "></i></a>
+                            <a href="# "><i class="fab fa-instagram "></i></a>
+                            <a href="# "><i class="fab fa-twitter "></i></a>
+                            <a href="# "><i class="fab fa-pinterest "></i></a>
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                         </div>
                     </div>
                 </div>
@@ -73,7 +80,11 @@
     <!-- Js Plugins -->
     <script src="{{asset('home/js/jquery-3.3.1.min.js')}}"></script>
     <script src="{{asset('home/js/bootstrap.min.js')}}"></script>
+<<<<<<< HEAD
     <script src="{{asset('home/js/jquery.nice-select.min.js ')}}"></script>
+=======
+    <!-- <script src="{{asset('home/js/jquery.nice-select.min.js ')}}"></script> -->
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
     <script src="{{asset('home/js/jquery-ui.min.js ')}}"></script>
     <script src="{{asset('home/js/jquery.slicknav.js ')}}"></script>
     <script src="{{asset('home/js/mixitup.min.js ')}}"></script>
@@ -83,5 +94,162 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
     {!! Toastr::message() !!} -->
+<<<<<<< HEAD
+=======
+    <script>
+        $(document).ready(function (){
+        $('.dropdown-menu .icon-menu').click(function () {
+            $(this).parent('li').children('.sub-menu').slideToggle();
+            $(this).toggleClass('fa-chevron-down fa-chevron-right');
+        });
+    });
+    </script>
+    <!--  Thêm sản phẩm ajax -->
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.add-to-cart').click(function(){
+                var id = $(this).data('id');
+                var cart_product_id = $('.cart_product_id_'+ id).val();
+                var cart_product_name = $('.cart_product_name_'+ id).val();
+                var cart_product_image = $('.cart_product_image_'+ id).val();
+                var cart_product_price = $('.cart_product_price_'+ id).val();
+                // var cart_product_price_sales = $('.cart_product_price_sales_'+ id).val();
+                var cart_product_amount = $('.cart_product_amount_'+ id).val();
+                var _token = $('input[name="_token"]').val();
+                $.ajax({
+                    url: '{{url('/add-cart')}}',
+                    method: 'POST',
+                    data:{cart_product_id :cart_product_id , cart_product_name: cart_product_name,cart_product_image :
+                        cart_product_image,cart_product_price:cart_product_price,cart_product_amount:cart_product_amount,_token :_token },
+                        success:function(data){
+                            Swal.fire({
+                            position: 'top-center',
+                            icon: 'success',
+                            title: 'Thêm sản phẩm thành công',
+                            showConfirmButton: false,
+                            timer: 1500
+                            })
+                        }
+                })
+                // swal("Good job!", "You clicked the button!", "success")
+            });
+        });
+    </script>
+
+    {{-- -- Ship -- --}}
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.choose').on('change',function(){
+                var action = $(this).attr('id');
+                var ma_id =  $(this).val();
+                var _token = $('input[name="_token"]').val();
+                var result = '';
+
+                if(action=='city'){
+                    result = 'district';
+                }else{
+                    result = 'village';
+                }
+                // console.log("ma_id", ma_id);
+                $.ajax({
+                    url: '{{url('/select-delivery-home')}}',
+                    method: 'POST',
+                    data: {action:action, ma_id:ma_id, _token:_token},
+                    success:function(data){
+                        $('#'+result).html(data);
+                    }
+                });
+            });
+        });
+    </script>
+
+    {{-- Feeship --}}
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.calculate_delivery').click(function(){
+                var city_id = $('.city').val();
+                var district_id = $('.district').val();
+                var village_id = $('.village').val();
+                var _token = $('input[name="_token"]').val();
+
+                if(city_id == '' && district_id == '' && village_id == ''){
+                    Swal.fire({
+                            position: 'top-center',
+                            icon: 'success',
+                            title: 'Thêm sản phẩm thành công',
+                            showConfirmButton: false,
+                            timer: 1500
+                })
+                }else{
+                    $.ajax({
+                    url: '{{url('/calculate-fee')}}',
+                    method: 'POST',
+                    data:{city_id:city_id, district_id:district_id, village_id:village_id, _token:_token},
+                        success:function(data){
+                            location.reload();
+                        }
+                    })
+                }
+            })
+        });
+    </script>
+
+
+
+
+
+
+
+{{-- Order  --}}
+<script type="text/javascript">
+     $(document).ready(function(){
+        $('.send_order').click(function(){
+            var total_after = $('.total_after').val();
+            Swal.fire({
+                title: 'Tiếp tục để thanh toán',
+                text: "Sau khi đặt hàng 24h sẽ không giải quyết đổi trả!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Tiếp tục'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    // var name = $('.last_name').val();
+                    var name = $('.name').val();
+                    var phone = $('.phone').val();
+                    var email = $('.email').val();
+                    var address = $('.address').val();
+                    var note = $('.note').val();
+                    var order_feeship = $('.order_feeship').val();
+                    // var shipping_method = $('.payment_select').val();
+                    var order_coupon = $('.order_coupon').val();
+                    var _token = $('input[name="_token"]').val();
+
+                    // console.log(name,phone,email ,adress ,note,order_feeship,order_coupon);
+                    $.ajax({
+                        url: '{{url('/confirm-order')}}',
+                        method: 'POST',
+                        data:{name:name,phone:phone, email:email,address:address,note:note, order_feeship:order_feeship, order_coupon:order_coupon,_token :_token },
+                            success:function(){
+                                Swal.fire(
+                                    'Thành công!',
+                                    'Thanh toán thành công.',
+                                    'success'
+                                    );
+                            }
+                    });
+                        window.setTimeout(function(){ 
+                            location.reload();
+                        } ,2000);
+                    } else if (result.isDenied) {
+                        Swal.fire('Changes are not saved', '', 'info')
+                    }
+        });
+    });
+    });
+</script>
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
 </body>
 </html>

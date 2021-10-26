@@ -49,6 +49,7 @@
 	                                                	
                                 @endphp
 
+<<<<<<< HEAD
                                 <li class="rating" style="cursor:pointer; {{$color}} font-size:30px;">&#9733;</li>
                         @endfor
 
@@ -57,17 +58,34 @@
                             <div class="mt-4">Giá:<span class="product__details__price"> {{number_format($product->price),''}} đ</span></div>
                         @else
                             <div class="mt-4">Giá gốc:<span style="text-decoration: line-through;"> {{number_format($product->price),''}} đ</span></div>
+=======
+                                <li class="rating" style="cursor:pointer; {{$color}} font-size:25px; margin-top:-7px">&#9733;</li>
+                        @endfor
+
+                        <span style="color: red; ">({{$count_rating}} đánh giá)</span>
+                        <div class="mt-2">Lượt xem: {{$product->views}}</div>
+                        @if(!$product->price_sales)
+                            <div class="mt-2">Giá:<span class="product__details__price"> {{number_format($product->price),''}} đ</span></div>
+                        @else
+                            <div class="mt-2">Giá gốc:<span style="text-decoration: line-through;"> {{number_format($product->price),''}} đ</span></div>
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                             <div>Giá Khuyến mãi:<span class="product__details__price"> {{number_format($product->price_sales),''}} đ</span></div>
                         @endif
                         
 
+<<<<<<< HEAD
                         <div>Lượt xem: {{$product->views}}</div>
                         <div class="mt-1">Tình trạng:
+=======
+                        
+                        <!-- <div class="mt-1">Tình trạng:
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                             @if($product->quanlity < 1)
                                 Hết hàng
                             @else
                                 Còn hàng ({{$product->quanlity}})
                             @endif
+<<<<<<< HEAD
                         </div>
                         <div class="mt-1">Ngày sản xuất: {{$product->add_day}}</div>
                         <div class="mt-1 mb-3">Ngày hết hạn: {{$product->expired_day}}</div>
@@ -90,6 +108,55 @@
                                     <a href="#"><i class="fa fa-twitter"></i></a>
                                     <a href="#"><i class="fa fa-instagram"></i></a>
                                     <a href="#"><i class="fa fa-pinterest"></i></a>
+=======
+                        </div> -->
+                        <!-- <div class="mt-1">Ngày sản xuất: {{$product->add_day}}</div>
+                        <div class="mt-1 mb-3">Ngày hết hạn: {{$product->expired_day}}</div> -->
+     
+                        <div class="product__details__quantity mt-4">
+                            <div class="quantity">
+
+                                @if(!$product->price_sales)
+                                    <form>
+                                        @csrf
+                                        <input type="hidden" value="{{$product->id}}" class="cart_product_id_{{$product->id}}" >
+                                        <input type="hidden" value="{{$product->name}}" class="cart_product_name_{{$product->id}}" >
+                                        <input type="hidden" value="{{$product->image}}" class="cart_product_image_{{$product->id}}" >
+                                        <input type="hidden" value="{{$product->price}}" class="cart_product_price_{{$product->id}}" >
+                                        <div class="pro-qty">
+                                            <input type="number" name="amount" min="1" max="{{$product->quanlity}}" value="1" class="cart_product_amount_{{$product->id}}">  
+                                        </div>
+                                    </form> 
+                                @else
+                                    <form>
+                                        @csrf
+                                        <input type="hidden" value="{{$product->id}}" class="cart_product_id_{{$product->id}}" >
+                                        <input type="hidden" value="{{$product->name}}" class="cart_product_name_{{$product->id}}" >
+                                        <input type="hidden" value="{{$product->image}}" class="cart_product_image_{{$product->id}}" >
+                                        <input type="hidden" value="{{$product->price_sales}}" class="cart_product_price_{{$product->id}}" >
+                                        <div class="pro-qty">
+                                            <input type="number" name="amount" min="1" max="{{$product->quanlity}}" value="1" class="cart_product_amount_{{$product->id}}">  
+                                        </div>                       
+                                    </form> 
+                                @endif
+                            </div>
+                        </div>
+                        <!-- thêm giỏ hàng ajax -->
+                        
+                            <button type="button" class="btn primary-btn add-to-cart" name="add-cart" data-id = "{{$product->id}}" >Thêm giỏ hàng</button>
+                            <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
+                  
+                        <ul>
+                            <li><b>Giao hàng</b> <span><samp>Miễn phí vận chuyển trong ngày</samp></span></li>
+                            <li><b>Tình trạng</b> <span>Còn hàng</span></li>
+                            <li><b>Cân nặng</b> <span>0.5 kg</span></li>
+                            <li><b> Chia sẽ </b>
+                                <div class="share">
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    <a href="#"><i class="fab fa-pinterest"></i></a>
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                                 </div>
                             </li>
                         </ul>
@@ -169,6 +236,7 @@
                             </div>
                             <div class="tab-pane" id="tabs-2" role="tabpanel">
                                 <div class="product__details__tab__desc col-md-11" style="margin: 0 auto">
+<<<<<<< HEAD
                                     <div style="border-left: 5px green solid"> <h4 style="margin-left:5px; margin-bottom:10px">Thông tin sản phẩm </h4> </div>
                                     <p>{!!$product->description!!}</p>
                                     <!-- <p>nội dung..</p> -->
@@ -179,6 +247,23 @@
                                     <h6>Mô tả sản phẩm</h6>
                                     <p>nội dung.</p>
                                         <p>nội dung.</p>
+=======
+                                <div style="border-left: 5px green solid" class="mb-4"> <h4 style="margin-left:5px; margin-bottom:10px">Thông tin sản phẩm </h4> </div>
+
+                                    <p style="border-bottom: 1px solid #dcdcdc; width: 300px">Tên:</p>
+                                    <p style="border-bottom: 1px solid #dcdcdc; width: 300px">Loại:</p>
+                                    <p style="border-bottom: 1px solid #dcdcdc; width: 300px">Đơn vị:</p>
+                                    <p style="border-bottom: 1px solid #dcdcdc; width: 300px">nội dung.</p>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tabs-3" role="tabpanel">
+                            <div class="product__details__tab__desc col-md-11" style="margin: 0 auto">
+                            <div style="border-left: 5px green solid"> <h4 style="margin-left:5px; margin-bottom:10px">Mô tả sản phẩm </h4></div>
+                                    <p>{!!$product->description!!}</p>
+                                    
+
+                                 
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                                 </div>
                             </div>
                         </div>
@@ -195,7 +280,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title related__product__title">
+<<<<<<< HEAD
                         <h2>Sản phẩm liên quan</h2>
+=======
+                        <h2>Sản Phẩm Liên Quan</h2>
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                     </div>
                 </div>
             </div>
@@ -205,14 +294,46 @@
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="{{asset('admin/images/product')}}/{{$offer->image}}">
                             <ul class="product__item__pic__hover">
+<<<<<<< HEAD
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
                                 <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+=======
+                                <li><button><i class="fa fa-heart"></i></button></li>
+                                <li><a href="{{url('product-detail')}}/{{$offer->slug}}/{{$offer->id}}"><i class="fa fa-retweet"></i></a></li>
+                                <li><button class="add-to-cart" name="add-cart" data-id = "{{$offer->id}}"><i class="fa fa-shopping-cart"></i></button></li>
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                             </ul>
                         </div>
                         <div class="product__item__text">
                             <h6><a href="{{url('product-detail')}}/{{$offer->slug}}/{{$offer->id}}">{{$offer->name}}</a></h6>
+<<<<<<< HEAD
                             <h5>{{number_format($offer->price),''}} đ</h5>
+=======
+                            @if(!$offer->price_sales)
+                                    <form>
+                                        @csrf
+                                        <input type="hidden" value="{{$offer->id}}" class="cart_product_id_{{$offer->id}}" >
+                                        <input type="hidden" value="{{$offer->name}}" class="cart_product_name_{{$offer->id}}" >
+                                        <input type="hidden" value="{{$offer->image}}" class="cart_product_image_{{$offer->id}}" >
+                                        <input type="hidden" value="{{$offer->price}}" class="cart_product_price_{{$offer->id}}" >
+                                        <input type="hidden" name="amount" min="1" value="1" class="cart_product_amount_{{$offer->id}}">  
+                                        <h5>{{number_format($offer->price),''}} đ</h5>
+                                    </form> 
+                                @else
+                                    <form>
+                                        @csrf
+                                        <input type="hidden" value="{{$offer->id}}" class="cart_product_id_{{$offer->id}}" >
+                                        <input type="hidden" value="{{$offer->name}}" class="cart_product_name_{{$offer->id}}" >
+                                        <input type="hidden" value="{{$offer->image}}" class="cart_product_image_{{$offer->id}}" >
+                                        <input type="hidden" value="{{$offer->price}}" class="cart_product_price_{{$offer->id}}" >
+                                        <input type="hidden" name="amount" min="1" value="1" class="cart_product_amount_{{$offer->id}}">  
+                                        <!-- </div> -->
+                                        <h5>{{number_format($offer->price_sales),''}} đ</h5>
+                                    </form> 
+                                @endif
+                            <!-- <h5>{{number_format($offer->price),''}} đ</h5> -->
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                         </div>
                     </div>
                 </div>
@@ -277,6 +398,7 @@
                 $('#'+product_id+'-'+count).css('color', '#ccc');
             }
         }
+<<<<<<< HEAD
     // //hover chuột đánh giá sao
     //     $(document).on('mouseenter', '.rating', function(){
     //         var index = $(this).data("index");
@@ -302,6 +424,9 @@
 //        $('#'+product_id+'-'+count).css('color', '#ffcc00');
 //       }
 //      });
+=======
+
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
         load_comment();
         function load_comment(){
             var product_id = $('.comment_product_id').val();

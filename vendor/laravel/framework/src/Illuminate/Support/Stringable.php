@@ -566,6 +566,7 @@ class Stringable implements JsonSerializable
     }
 
     /**
+<<<<<<< HEAD
      * Strip HTML and PHP tags from the given string.
      *
      * @param  string  $allowedTags
@@ -577,6 +578,8 @@ class Stringable implements JsonSerializable
     }
 
     /**
+=======
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
      * Convert the given string to upper-case.
      *
      * @return static
@@ -789,7 +792,11 @@ class Stringable implements JsonSerializable
     /**
      * Dump the string and end the script.
      *
+<<<<<<< HEAD
      * @return never
+=======
+     * @return void
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
      */
     public function dd()
     {

@@ -513,6 +513,7 @@ class LazyCollection implements Enumerable
     }
 
     /**
+<<<<<<< HEAD
      * Determine if any of the keys exist in the collection.
      *
      * @param  mixed  $key
@@ -532,6 +533,8 @@ class LazyCollection implements Enumerable
     }
 
     /**
+=======
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
      * Concatenate values of a given key as a string.
      *
      * @param  string  $value

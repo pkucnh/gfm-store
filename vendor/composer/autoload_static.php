@@ -24,9 +24,15 @@ class ComposerStaticInit31af88a20529d963982cfb56394e57df
         '23c18046f52bef3eea034657bafda50f' => __DIR__ . '/..' . '/symfony/polyfill-php81/bootstrap.php',
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
+<<<<<<< HEAD
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
+=======
+        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
+        '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
+        'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
         '265b4faa2b3a9766332744949e83bf97' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections/helpers.php',
         'c7a3c339e7e14b60e06a2d7fcce9476b' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Events/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
@@ -334,7 +340,11 @@ class ComposerStaticInit31af88a20529d963982cfb56394e57df
         ),
         'Psr\\Log\\' => 
         array (
+<<<<<<< HEAD
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+=======
+            0 => __DIR__ . '/..' . '/psr/log/src',
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
         ),
         'Psr\\Http\\Message\\' => 
         array (
@@ -533,7 +543,10 @@ class ComposerStaticInit31af88a20529d963982cfb56394e57df
         'App\\Http\\Controllers\\admin\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/CategoryController.php',
         'App\\Http\\Controllers\\admin\\CouponController' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/CouponController.php',
         'App\\Http\\Controllers\\admin\\ProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/ProductController.php',
+<<<<<<< HEAD
         'App\\Http\\Controllers\\home\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/home/HomeController.php',
+=======
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -546,8 +559,13 @@ class ComposerStaticInit31af88a20529d963982cfb56394e57df
         'App\\Models\\Category' => __DIR__ . '/../..' . '/app/Models/Category.php',
         'App\\Models\\Coupons' => __DIR__ . '/../..' . '/app/Models/Coupons.php',
         'App\\Models\\Product' => __DIR__ . '/../..' . '/app/Models/Product.php',
+<<<<<<< HEAD
         'App\\Models\\Rating' => __DIR__ . '/../..' . '/app/Models/Rating.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+=======
+        'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Models\\galley' => __DIR__ . '/../..' . '/app/Models/galley.php',
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -1341,6 +1359,10 @@ class ComposerStaticInit31af88a20529d963982cfb56394e57df
         'Faker\\Provider\\nl_BE\\Payment' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_BE/Payment.php',
         'Faker\\Provider\\nl_BE\\Person' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_BE/Person.php',
         'Faker\\Provider\\nl_BE\\PhoneNumber' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_BE/PhoneNumber.php',
+<<<<<<< HEAD
+=======
+        'Faker\\Provider\\nl_BE\\Text' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_BE/Text.php',
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
         'Faker\\Provider\\nl_NL\\Address' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_NL/Address.php',
         'Faker\\Provider\\nl_NL\\Color' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_NL/Color.php',
         'Faker\\Provider\\nl_NL\\Company' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_NL/Company.php',
@@ -2346,7 +2368,10 @@ class ComposerStaticInit31af88a20529d963982cfb56394e57df
         'Illuminate\\Queue\\Events\\JobProcessed' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/JobProcessed.php',
         'Illuminate\\Queue\\Events\\JobProcessing' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/JobProcessing.php',
         'Illuminate\\Queue\\Events\\JobQueued' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/JobQueued.php',
+<<<<<<< HEAD
         'Illuminate\\Queue\\Events\\JobRetryRequested' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/JobRetryRequested.php',
+=======
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
         'Illuminate\\Queue\\Events\\Looping' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/Looping.php',
         'Illuminate\\Queue\\Events\\QueueBusy' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/QueueBusy.php',
         'Illuminate\\Queue\\Events\\WorkerStopping' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/WorkerStopping.php',
@@ -4101,6 +4126,7 @@ class ComposerStaticInit31af88a20529d963982cfb56394e57df
         'Psr\\Http\\Message\\UploadedFileInterface' => __DIR__ . '/..' . '/psr/http-message/src/UploadedFileInterface.php',
         'Psr\\Http\\Message\\UriFactoryInterface' => __DIR__ . '/..' . '/psr/http-factory/src/UriFactoryInterface.php',
         'Psr\\Http\\Message\\UriInterface' => __DIR__ . '/..' . '/psr/http-message/src/UriInterface.php',
+<<<<<<< HEAD
         'Psr\\Log\\AbstractLogger' => __DIR__ . '/..' . '/psr/log/Psr/Log/AbstractLogger.php',
         'Psr\\Log\\InvalidArgumentException' => __DIR__ . '/..' . '/psr/log/Psr/Log/InvalidArgumentException.php',
         'Psr\\Log\\LogLevel' => __DIR__ . '/..' . '/psr/log/Psr/Log/LogLevel.php',
@@ -4112,6 +4138,16 @@ class ComposerStaticInit31af88a20529d963982cfb56394e57df
         'Psr\\Log\\Test\\DummyTest' => __DIR__ . '/..' . '/psr/log/Psr/Log/Test/DummyTest.php',
         'Psr\\Log\\Test\\LoggerInterfaceTest' => __DIR__ . '/..' . '/psr/log/Psr/Log/Test/LoggerInterfaceTest.php',
         'Psr\\Log\\Test\\TestLogger' => __DIR__ . '/..' . '/psr/log/Psr/Log/Test/TestLogger.php',
+=======
+        'Psr\\Log\\AbstractLogger' => __DIR__ . '/..' . '/psr/log/src/AbstractLogger.php',
+        'Psr\\Log\\InvalidArgumentException' => __DIR__ . '/..' . '/psr/log/src/InvalidArgumentException.php',
+        'Psr\\Log\\LogLevel' => __DIR__ . '/..' . '/psr/log/src/LogLevel.php',
+        'Psr\\Log\\LoggerAwareInterface' => __DIR__ . '/..' . '/psr/log/src/LoggerAwareInterface.php',
+        'Psr\\Log\\LoggerAwareTrait' => __DIR__ . '/..' . '/psr/log/src/LoggerAwareTrait.php',
+        'Psr\\Log\\LoggerInterface' => __DIR__ . '/..' . '/psr/log/src/LoggerInterface.php',
+        'Psr\\Log\\LoggerTrait' => __DIR__ . '/..' . '/psr/log/src/LoggerTrait.php',
+        'Psr\\Log\\NullLogger' => __DIR__ . '/..' . '/psr/log/src/NullLogger.php',
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
         'Psr\\SimpleCache\\CacheException' => __DIR__ . '/..' . '/psr/simple-cache/src/CacheException.php',
         'Psr\\SimpleCache\\CacheInterface' => __DIR__ . '/..' . '/psr/simple-cache/src/CacheInterface.php',
         'Psr\\SimpleCache\\InvalidArgumentException' => __DIR__ . '/..' . '/psr/simple-cache/src/InvalidArgumentException.php',

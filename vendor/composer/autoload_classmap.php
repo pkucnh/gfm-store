@@ -12,7 +12,10 @@ return array(
     'App\\Http\\Controllers\\admin\\CategoryController' => $baseDir . '/app/Http/Controllers/admin/CategoryController.php',
     'App\\Http\\Controllers\\admin\\CouponController' => $baseDir . '/app/Http/Controllers/admin/CouponController.php',
     'App\\Http\\Controllers\\admin\\ProductController' => $baseDir . '/app/Http/Controllers/admin/ProductController.php',
+<<<<<<< HEAD
     'App\\Http\\Controllers\\home\\HomeController' => $baseDir . '/app/Http/Controllers/home/HomeController.php',
+=======
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',
@@ -25,8 +28,13 @@ return array(
     'App\\Models\\Category' => $baseDir . '/app/Models/Category.php',
     'App\\Models\\Coupons' => $baseDir . '/app/Models/Coupons.php',
     'App\\Models\\Product' => $baseDir . '/app/Models/Product.php',
+<<<<<<< HEAD
     'App\\Models\\Rating' => $baseDir . '/app/Models/Rating.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
+=======
+    'App\\Models\\User' => $baseDir . '/app/Models/User.php',
+    'App\\Models\\galley' => $baseDir . '/app/Models/galley.php',
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',
@@ -820,6 +828,10 @@ return array(
     'Faker\\Provider\\nl_BE\\Payment' => $vendorDir . '/fakerphp/faker/src/Faker/Provider/nl_BE/Payment.php',
     'Faker\\Provider\\nl_BE\\Person' => $vendorDir . '/fakerphp/faker/src/Faker/Provider/nl_BE/Person.php',
     'Faker\\Provider\\nl_BE\\PhoneNumber' => $vendorDir . '/fakerphp/faker/src/Faker/Provider/nl_BE/PhoneNumber.php',
+<<<<<<< HEAD
+=======
+    'Faker\\Provider\\nl_BE\\Text' => $vendorDir . '/fakerphp/faker/src/Faker/Provider/nl_BE/Text.php',
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
     'Faker\\Provider\\nl_NL\\Address' => $vendorDir . '/fakerphp/faker/src/Faker/Provider/nl_NL/Address.php',
     'Faker\\Provider\\nl_NL\\Color' => $vendorDir . '/fakerphp/faker/src/Faker/Provider/nl_NL/Color.php',
     'Faker\\Provider\\nl_NL\\Company' => $vendorDir . '/fakerphp/faker/src/Faker/Provider/nl_NL/Company.php',
@@ -1825,7 +1837,10 @@ return array(
     'Illuminate\\Queue\\Events\\JobProcessed' => $vendorDir . '/laravel/framework/src/Illuminate/Queue/Events/JobProcessed.php',
     'Illuminate\\Queue\\Events\\JobProcessing' => $vendorDir . '/laravel/framework/src/Illuminate/Queue/Events/JobProcessing.php',
     'Illuminate\\Queue\\Events\\JobQueued' => $vendorDir . '/laravel/framework/src/Illuminate/Queue/Events/JobQueued.php',
+<<<<<<< HEAD
     'Illuminate\\Queue\\Events\\JobRetryRequested' => $vendorDir . '/laravel/framework/src/Illuminate/Queue/Events/JobRetryRequested.php',
+=======
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
     'Illuminate\\Queue\\Events\\Looping' => $vendorDir . '/laravel/framework/src/Illuminate/Queue/Events/Looping.php',
     'Illuminate\\Queue\\Events\\QueueBusy' => $vendorDir . '/laravel/framework/src/Illuminate/Queue/Events/QueueBusy.php',
     'Illuminate\\Queue\\Events\\WorkerStopping' => $vendorDir . '/laravel/framework/src/Illuminate/Queue/Events/WorkerStopping.php',
@@ -3580,6 +3595,7 @@ return array(
     'Psr\\Http\\Message\\UploadedFileInterface' => $vendorDir . '/psr/http-message/src/UploadedFileInterface.php',
     'Psr\\Http\\Message\\UriFactoryInterface' => $vendorDir . '/psr/http-factory/src/UriFactoryInterface.php',
     'Psr\\Http\\Message\\UriInterface' => $vendorDir . '/psr/http-message/src/UriInterface.php',
+<<<<<<< HEAD
     'Psr\\Log\\AbstractLogger' => $vendorDir . '/psr/log/Psr/Log/AbstractLogger.php',
     'Psr\\Log\\InvalidArgumentException' => $vendorDir . '/psr/log/Psr/Log/InvalidArgumentException.php',
     'Psr\\Log\\LogLevel' => $vendorDir . '/psr/log/Psr/Log/LogLevel.php',
@@ -3591,6 +3607,16 @@ return array(
     'Psr\\Log\\Test\\DummyTest' => $vendorDir . '/psr/log/Psr/Log/Test/DummyTest.php',
     'Psr\\Log\\Test\\LoggerInterfaceTest' => $vendorDir . '/psr/log/Psr/Log/Test/LoggerInterfaceTest.php',
     'Psr\\Log\\Test\\TestLogger' => $vendorDir . '/psr/log/Psr/Log/Test/TestLogger.php',
+=======
+    'Psr\\Log\\AbstractLogger' => $vendorDir . '/psr/log/src/AbstractLogger.php',
+    'Psr\\Log\\InvalidArgumentException' => $vendorDir . '/psr/log/src/InvalidArgumentException.php',
+    'Psr\\Log\\LogLevel' => $vendorDir . '/psr/log/src/LogLevel.php',
+    'Psr\\Log\\LoggerAwareInterface' => $vendorDir . '/psr/log/src/LoggerAwareInterface.php',
+    'Psr\\Log\\LoggerAwareTrait' => $vendorDir . '/psr/log/src/LoggerAwareTrait.php',
+    'Psr\\Log\\LoggerInterface' => $vendorDir . '/psr/log/src/LoggerInterface.php',
+    'Psr\\Log\\LoggerTrait' => $vendorDir . '/psr/log/src/LoggerTrait.php',
+    'Psr\\Log\\NullLogger' => $vendorDir . '/psr/log/src/NullLogger.php',
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
     'Psr\\SimpleCache\\CacheException' => $vendorDir . '/psr/simple-cache/src/CacheException.php',
     'Psr\\SimpleCache\\CacheInterface' => $vendorDir . '/psr/simple-cache/src/CacheInterface.php',
     'Psr\\SimpleCache\\InvalidArgumentException' => $vendorDir . '/psr/simple-cache/src/InvalidArgumentException.php',

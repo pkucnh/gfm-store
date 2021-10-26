@@ -2,10 +2,15 @@
 
 namespace Facade\Ignition\Commands;
 
+<<<<<<< HEAD
 use Composer\InstalledVersions;
 use Exception;
 use Facade\FlareClient\Flare;
 use Facade\FlareClient\Http\Exceptions\BadResponseCode;
+=======
+use Exception;
+use Facade\FlareClient\Flare;
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
 use Illuminate\Config\Repository;
 use Illuminate\Console\Command;
 use Illuminate\Log\LogManager;
@@ -76,6 +81,7 @@ class TestCommand extends Command
 
         try {
             app(Flare::class)->sendTestReport($testException);
+<<<<<<< HEAD
             $this->info('');
         } catch (Exception $exception) {
             $this->warn('❌ We were unable to send an exception to Flare. ');
@@ -112,6 +118,11 @@ class TestCommand extends Command
                 ['Curl', curl_version()['version']],
                 ['SSL', curl_version()['ssl_version']],
             ]);
+=======
+            $this->info(PHP_EOL);
+        } catch (Exception $exception) {
+            $this->warn('❌ We were unable to send an exception to Flare. Make sure that your key is correct and that you have a valid subscription. '.PHP_EOL.PHP_EOL.'For more info visit the docs on installing Flare in a Laravel project: https://flareapp.io/docs/ignition-for-laravel/introduction');
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
 
             if ($this->output->isVerbose()) {
                 throw $exception;

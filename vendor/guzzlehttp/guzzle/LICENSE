@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 The MIT License (MIT)
 
 Copyright (c) 2011 Michael Dowling <mtdowling@gmail.com>
@@ -7,6 +8,9 @@ Copyright (c) 2015 Márk Sági-Kazár <mark.sagikazar@gmail.com>
 Copyright (c) 2015 Tobias Schultze <webmaster@tubo-world.de>
 Copyright (c) 2016 Tobias Nyholm <tobias.nyholm@gmail.com>
 Copyright (c) 2016 George Mponos <gmponos@gmail.com>
+=======
+Copyright (c) 2011 Michael Dowling, https://github.com/mtdowling <mtdowling@gmail.com>
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

@@ -8,12 +8,17 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\Gallrey;
 use App\Models\Rating;
+<<<<<<< HEAD
 use App\Models\Blog;
 use App\Models\CategoryBlog;
 
 
 
 use Toastr;
+=======
+use Toastr;
+use Carbon\Carbon;
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
 
 class HomeController extends Controller
 {
@@ -87,7 +92,14 @@ class HomeController extends Controller
         
             $rating->product_id = $data['product_id'];
             $rating->rating = $data['index'];
+<<<<<<< HEAD
             $rating->time = now();
+=======
+
+            $dt = Carbon::now('Asia/Ho_Chi_Minh');
+
+            $rating->time = $dt->toDayDateTimeString();
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
             $rating->name = $data['name'];
             $rating->email = $data['email']; 
             $rating->content = $data['comment_content'];
@@ -118,9 +130,25 @@ class HomeController extends Controller
     
     
 
+<<<<<<< HEAD
     public function store(Request $request)
     {
         //
+=======
+    public function ByProduct(Request $request)
+    {
+        // $products = Category::->get();
+        $products = Product::join('category', 'category.id', '=', 'category_id')->select(('category.name as name_cate'),'product.*')->orderbyDesc('price_sales')->get();
+        $product_new = Product::orderbyDesc('id')->paginate(3);
+        $category = Category::where('status','=',1)->get();
+        $data = [
+            'category' => $category,
+            'products' => $products, 
+            'product_new' => $product_new,
+        ];
+        
+        return view('home.page.by_product',$data);
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
     }
 
     /**

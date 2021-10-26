@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Swiftmailer: A feature-rich PHP Mailer
 ======================================
 
@@ -9,6 +10,13 @@ Please, move to `Symfony Mailer <https://symfony.com/doc/current/mailer.html>`_ 
 `Symfony Mailer <https://symfony.com/doc/current/mailer.html>`_ is the next evolution of Swiftmailer.
 It provides the same features with support for modern PHP code and support for third-party providers.
 
+=======
+Introduction
+============
+
+Swift Mailer is a component based library for sending e-mails from PHP applications.
+
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
 System Requirements
 -------------------
 

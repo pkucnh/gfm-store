@@ -331,12 +331,20 @@ if (!\function_exists('Psy\\bin')) {
     {
         return function () {
             if (!isset($_SERVER['PSYSH_IGNORE_ENV']) || !$_SERVER['PSYSH_IGNORE_ENV']) {
+<<<<<<< HEAD
                 if (\defined('HHVM_VERSION_ID') && HHVM_VERSION_ID < 31800) {
+=======
+                if (\defined('HHVM_VERSION_ID') && \HHVM_VERSION_ID < 31800) {
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                     \fwrite(\STDERR, 'HHVM 3.18 or higher is required. You can set the environment variable PSYSH_IGNORE_ENV=1 to override this restriction and proceed anyway.'.\PHP_EOL);
                     exit(1);
                 }
 
+<<<<<<< HEAD
                 if (\defined('HHVM_VERSION_ID') && HHVM_VERSION_ID > 39999) {
+=======
+                if (\defined('HHVM_VERSION_ID') && \HHVM_VERSION_ID > 39999) {
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
                     \fwrite(\STDERR, 'HHVM 4 or higher is not supported. You can set the environment variable PSYSH_IGNORE_ENV=1 to override this restriction and proceed anyway.'.\PHP_EOL);
                     exit(1);
                 }

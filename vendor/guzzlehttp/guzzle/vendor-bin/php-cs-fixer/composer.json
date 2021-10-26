@@ -1,7 +1,11 @@
 {
     "require": {
         "php": "^7.2.5 || ^8.0",
+<<<<<<< HEAD
         "friendsofphp/php-cs-fixer": "3.2.1"
+=======
+        "friendsofphp/php-cs-fixer": "2.18.3"
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
     },
     "config": {
         "preferred-install": "dist"

@@ -2,6 +2,7 @@
 
 Please refer to [UPGRADING](UPGRADING.md) guide for upgrading to a major version.
 
+<<<<<<< HEAD
 ## 7.4.0 - 2021-10-18
 
 ### Added
@@ -19,6 +20,8 @@ Please refer to [UPGRADING](UPGRADING.md) guide for upgrading to a major version
 
 - Be more strict with types [#2914](https://github.com/guzzle/guzzle/pull/2914), [#2917](https://github.com/guzzle/guzzle/pull/2917), [#2919](https://github.com/guzzle/guzzle/pull/2919), [#2945](https://github.com/guzzle/guzzle/pull/2945)
 
+=======
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
 ## 7.3.0 - 2021-03-23
 
 ### Added

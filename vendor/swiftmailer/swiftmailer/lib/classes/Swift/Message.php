@@ -224,7 +224,11 @@ class Swift_Message extends Swift_Mime_SimpleMessage
     protected function saveHeaders(array $altered)
     {
         foreach ($altered as $head) {
+<<<<<<< HEAD
             $lc = strtolower($head ?? '');
+=======
+            $lc = strtolower($head);
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
 
             if (!isset($this->savedMessage['headers'][$lc])) {
                 $this->savedMessage['headers'][$lc] = $this->getHeaders()->getAll($head);

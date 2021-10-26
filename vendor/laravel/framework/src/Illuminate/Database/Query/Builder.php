@@ -3402,7 +3402,11 @@ class Builder
     /**
      * Die and dump the current SQL and bindings.
      *
+<<<<<<< HEAD
      * @return never
+=======
+     * @return void
+>>>>>>> e67035c4ea184912f964e44a044cb8c2822baaa3
      */
     public function dd()
     {
