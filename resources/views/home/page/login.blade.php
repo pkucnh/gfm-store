@@ -20,7 +20,7 @@
                         </div>
                         
                         <h2>Đăng nhập</h2>
-                        <input type="text" name="email" placeholder="Nhập tài khoản hoặc email">
+                        <input type="text" name="email" placeholder="Nhập email đăng nhập">
                         <input type="password" name="password" placeholder="Mật khẩu">
                         <input type="submit" name="login" value="Đăng nhập">
                         <p class="signup">Bạn chưa có mật khẩu?<a href="#" onclick="toggleForm();">Đăng ký</a></p>
@@ -29,14 +29,16 @@
             </div>
             <div class="user signupBx">
                 <div class="formBx">
-                    <form>
+                    <form action="{{url('register')}}" method="post">
+                        @csrf
                         <div style="text-align:center">
                             <img src="{{asset('home/login/img/logo.png')}}" width="70px" height="70px" >
                         </div>
                         <h2>Đăng ký</h2>
+                        <input type="text" name="fullname" placeholder="Nhập họ và tên">
                         <input type="text" name="email" placeholder="Nhập email">
                         <input type="password" name="password" placeholder="Mật khẩu">
-                        <input type="re-password" name="password" placeholder="Xác nhận mật khẩu">
+                        <input type="password" name="re_password" placeholder="Xác nhận mật khẩu">
                         <input type="submit" value="Đăng ký">
                         <p class="signup">Đi đến đăng nhập?<a href="#" onclick="toggleForm();">Đăng nhập</a></p>
                     </form>

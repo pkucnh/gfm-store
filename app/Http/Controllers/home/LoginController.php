@@ -12,6 +12,7 @@ use App\Models\Rating;
 use App\Models\User;
 use Toastr;
 use Carbon\Carbon;
+use Auth;
 
 class LoginController extends Controller
 {
@@ -30,41 +31,44 @@ class LoginController extends Controller
 
         $data = $request->all();     
 
-        // $messages = [
-        //     'email.required' => 'Email không được rỗng!',
-        //     'password.required' => 'Mật khẩu không được rỗng!'
-        // ];
-        // $validatedData = $request->validate([
-        //     'email' => 'bail|required|email',
-        //     'password' => 'bail|required|max:25|min:1'
-        // ],$messages);       
+        $arr = [
+            'email' => $data['email'],
+            'password' => $data['password']
+        ];
 
-            // $email = $request->input("email");
-            // $password =  $request->input("password");
-        $email = $data['email'];
-        $password =  $data['password'];
-        // $user_pass = md5($password);
+        if (Auth::attempt($arr)) {
+            Session::get('id_user', Auth::user()->id);
+            Session::get('fullname', Auth::user()->fullname);
+            Session::get('image', Auth::user()->fullname);
+            return redirect('/');
+        }else{
+            return redirect('/login');
+        }  
+    }
 
-        $arr = $request->only(["email", "password"]);
-            //Check nếu có coupon trước khi đăng nhập
-        if(Session::get('coupon')){
-            Session::forget('coupon');
-            Session::forget('cart');
-        }
-        $result = User::where('email',$email)->where('password',$password)->first();
-        if($result){
-            Session::put('customer_name',$result->name);
-            Session::put('customer_id',$result->id);
-            Session::put('customer_img',$result->img);
-            return redirect("/");
-        }
-        return redirect('login')->withInput()->withErrors(['message'=>'Tài khoản không tồn tại!']);     
+    public function LogoutUser()
+    {
+        Session::forget('id_user');
+        Session::forget('fullname');
+        Session::forget('image');
+        Auth::logout();
+        return redirect('/');
+
     }
 
 
-    public function index()
+    public function register(Request $request)
     {
-        //
+        $data = $request->all();
+        $user = new User();
+        $user->fullname = $data['fullname'];
+        $user->email = $data['email'];
+        $user->password = bcrypt($data['password']);
+        $user->level = 0;
+        $user->save();
+
+
+        return redirect('/');
     }
 
     /**

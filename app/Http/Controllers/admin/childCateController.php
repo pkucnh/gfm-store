@@ -46,7 +46,7 @@ class childCateController extends Controller
             $child_cate = childCate::where('id_category', $data['id_cate'])->orderby('name', 'ASC')->get();
             foreach($child_cate as $key => $val){
                 $output .= '<option value="'.$val->id.'">'.$val->name.'</option>';
-            }       
+            }
         echo $output;
                 
     }
