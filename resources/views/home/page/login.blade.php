@@ -1,3 +1,5 @@
+
+
 <!-- <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,11 +16,11 @@
             <div class="user signinBx">
                 <div class="imgBx"><img src="{{asset('home/login/img/3.jpg')}}"></div>
                 <div class="formBx">         
-                    <form>
+                    <form action="{{url('check-login-user')}}" method="post">
+                        @csrf
                         <div style="text-align:center">
                             <img src="{{asset('home/login/img/logo.png')}}" width="70px" height="70px" >
                         </div>
-                        
                         <h2>Đăng nhập</h2>
                         <input type="text" name="email" placeholder="Nhập tài khoản hoặc email">
                         <input type="password" name="password" placeholder="Mật khẩu">
@@ -29,7 +31,8 @@
             </div>
             <div class="user signupBx">
                 <div class="formBx">
-                    <form>
+                    <form action="{{url('register')}}" method="post">
+                            @csrf
                         <div style="text-align:center">
                             <img src="{{asset('home/login/img/logo.png')}}" width="70px" height="70px" >
                         </div>
