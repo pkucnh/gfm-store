@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="{{asset('home/css/style.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('home/css/comment.css')}}" type="text/css">
     <link rel="stylesheet" href="sweetalert2.min.css">
+    <!-- // login -->
+
   
 </head>
 
@@ -119,7 +121,7 @@
                                 <a href="#"><i class="fa fa-pinterest-p"></i></a>
                             </div>
                             <div class="header__top__right__language">
-                                <img src="img/language.png" alt="">
+                                <img src="{{asset('home/img/vietnam.png')}}" width="30px" height="20px" alt="">
                                 <div>Tiếng Việt</div>
                                 <span class="arrow_carrot-down"></span>
                                 <ul>
@@ -129,7 +131,15 @@
                             </div>
                             <div class="header__top__right__auth">
                             @if(Auth::check())
-                                <a href="#"><i class="fa fa-user"></i> {{Auth::user()->email}}</a>
+                               <!-- <span class="arrow_carrot-down"> <a href="#"> {{Auth::user()->fullname}}</a> -->
+                               <div class="header__top__right__language_user">
+                               <div>{{Auth::user()->fullname}}</div>
+                                <!-- <span class="arrow_carrot-down_user"></span> -->
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-user"></i>Cá nhân</a></li>
+                                    <li><a href="{{url('logout')}}"><i class="fas fa-sign-out-alt"></i> Thoát</a></li>
+                                </ul>
+                                </div>
                             @else
                                 <a href="{{url('login')}}"><i class="fa fa-user"></i> Đăng nhập</a>
                             @endif
@@ -166,8 +176,13 @@
                 <div class="col-lg-2">
                     <div class="header__cart">
                         <ul>
-                            <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                            <li><a href="{{url('show-cart')}}"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                            <li><a href="#"><i class="fa fa-home"></i></a></li>
+                            <li><a href="{{url('show-cart')}}"><i class="fa fa-shopping-bag"></i> <span>
+                                @if(Session::get('cart'))
+                                    {{count(Session::get('cart'))}}
+                                @endif
+                                0
+                                </span></a></li>
                         </ul>
                     
                     </div>

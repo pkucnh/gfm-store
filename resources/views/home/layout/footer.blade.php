@@ -83,6 +83,7 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
     {!! Toastr::message() !!} -->
+    
     <script>
         $(document).ready(function (){
         $('.dropdown-menu .icon-menu').click(function () {

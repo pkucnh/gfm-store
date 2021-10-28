@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="{{asset('home/login/css/login2.css')}}">
     <title>Document</title>
 </head>
-<body>
+<body> -->
+<!-- @include('home.layout.header') -->
     <section style="background-image: url({{asset('home/login/img/dt.jpg')}})">
         <div class="container">
             <div class="user signinBx">
@@ -55,5 +56,5 @@
             container.classList.toggle('active')
         }
     </script>
-</body>
-</html>
+<!-- </body>
+</html> -->

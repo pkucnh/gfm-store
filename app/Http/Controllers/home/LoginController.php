@@ -23,8 +23,14 @@ class LoginController extends Controller
      */
     public function LoginUser(Request $request){    
    
-        
-        return view('home.page.login');
+        $category = Category::where('status','=',1)->get();
+        $data = [
+     
+            'category' => $category,
+           
+        ];
+
+        return view('home.page.login',$data);
     }
 
     public function CheckLoginUser(Request $request){
@@ -37,9 +43,9 @@ class LoginController extends Controller
         ];
 
         if (Auth::attempt($arr)) {
-            Session::get('id_user', Auth::user()->id);
-            Session::get('fullname', Auth::user()->fullname);
-            Session::get('image', Auth::user()->fullname);
+            Session::get('customer_id', Auth::user()->id);
+            Session::get('customer_name', Auth::user()->fullname);
+            Session::get('customer_image', Auth::user()->image);
             return redirect('/');
         }else{
             return redirect('/login');
@@ -48,9 +54,9 @@ class LoginController extends Controller
 
     public function LogoutUser()
     {
-        Session::forget('id_user');
-        Session::forget('fullname');
-        Session::forget('image');
+        Session::forget('customer_id');
+        Session::forget('customer_name');
+        Session::forget('customer_image');
         Auth::logout();
         return redirect('/');
 

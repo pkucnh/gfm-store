@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\home;
 
+use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;

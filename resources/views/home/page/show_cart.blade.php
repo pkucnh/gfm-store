@@ -153,28 +153,30 @@
                 </div>
                 <div class="col-lg-5">
                     <div class="shoping__continue">
-                        <div class="shoping__discount">
+                        @if(Session::get('id_customer'))
+                            <div class="shoping__discount">
 
-                            @php
-                                $message = Session::get('cou');
-                                $messages = Session::get('cous');
-                                if ($message) {
-                                        echo '<div class="alert alert-success">'.$message.'</div>';
-                                        Session::put('message',null);
-                                }   
-                                if ($messages) {
-                                        echo '<div class="alert alert-danger">'.$messages.'</div>';
-                                        Session::put('message',null);
-                                } 
-                            @endphp
+                                @php
+                                    $message = Session::get('cou');
+                                    $messages = Session::get('cous');
+                                    if ($message) {
+                                            echo '<div class="alert alert-success">'.$message.'</div>';
+                                            Session::put('message',null);
+                                    }   
+                                    if ($messages) {
+                                            echo '<div class="alert alert-danger">'.$messages.'</div>';
+                                            Session::put('message',null);
+                                    } 
+                                @endphp
 
-                            <h5>Mã giảm giá</h5>
-                            <form action="{{url('/check-coupon')}}" method="post">
-                            @csrf
-                                <input type="text" name="code" placeholder="Nhập mã giảm giá">
-                                <button type="submit" name="check_coupon" class="site-btn">Xác nhận</button>
-                            </form>
-                        </div>
+                                <h5>Mã giảm giá</h5>
+                                <form action="{{url('/check-coupon')}}" method="post">
+                                @csrf
+                                    <input type="text" name="code" placeholder="Nhập mã giảm giá">
+                                    <button type="submit" name="check_coupon" class="site-btn">Xác nhận</button>
+                                </form>
+                            </div>
+                        @endif
                     </div>
                 </div>
            
