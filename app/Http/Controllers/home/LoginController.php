@@ -82,9 +82,9 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function ForgotPassword(Request $request)
     {
-        //
+        return view('home.page.forgot_password');
     }
 
     /**
@@ -95,7 +95,7 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**

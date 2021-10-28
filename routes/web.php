@@ -117,3 +117,5 @@ Route::post('/check-login-user', 'App\Http\Controllers\home\LoginController@Chec
 
 // THích sản phẩm
 Route::post('/like-product', 'App\Http\Controllers\home\HomeController@LikeProduct');
+// lấy lại mật khẩu
+Route::get('/forgot-password', 'App\Http\Controllers\home\LoginController@ForgotPassword');
