@@ -108,7 +108,10 @@ Route::post('/select-category', [childCateController::class, 'select_category'])
 // Route::post('category/delete', 'App\Http\Controllers\admin\CategoryController@delete')->name('delete');
 
 // dang nhập khách hàng
-Route::get('/login', 'App\Http\Controllers\home\LoginController@LoginUser');
+Route::get('/login', 'App\Http\Controllers\home\LoginController@LoginUser')->middleware('checkLogin');
+Route::get('/logout', 'App\Http\Controllers\home\LoginController@LogoutUser');
+
+Route::post('/register', 'App\Http\Controllers\home\LoginController@register');
 
 Route::post('/check-login-user', 'App\Http\Controllers\home\LoginController@CheckLoginUser');
 

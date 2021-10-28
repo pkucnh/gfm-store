@@ -44,7 +44,7 @@
         <div class="humberger__menu__cart">
             <ul>
                 <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                <li><a href=""><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                <li><a href=""><i class="fa fa-shopping-bag"></i> <span>4</span></a></li>
             </ul>
         </div>
         <div class="humberger__menu__widget">
@@ -57,9 +57,13 @@
                     <li><a href="#">English</a></li>
                 </ul>
             </div>
+           
+
+
             <div class="header__top__right__auth">
-                <a href="#"><i class="fa fa-user"></i> Đăng nhập</a>
+                <a href="#"><i class="fa fa-user"></i>Đăng nhập</a>
             </div>
+            
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
@@ -124,12 +128,11 @@
                                 </ul>
                             </div>
                             <div class="header__top__right__auth">
-                            @if(Session('customer_name'))
-                                <a href="#"><i class="fa fa-user"></i>{{Session('customer_name')}}</a>
+                            @if(Auth::check())
+                                <a href="#"><i class="fa fa-user"></i> {{Auth::user()->email}}</a>
                             @else
                                 <a href="{{url('login')}}"><i class="fa fa-user"></i> Đăng nhập</a>
                             @endif
-                    
                             </div>
                         </div>
                     </div>
