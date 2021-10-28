@@ -819,7 +819,7 @@ ol {
     width: 30px;
     line-height: 70px;
     text-align: center;
-    /* border: 1px solid #ebebeb; */
+    border: 1px solid #ebebeb;
     position: absolute;
     left: -35px;
     top: 50%;

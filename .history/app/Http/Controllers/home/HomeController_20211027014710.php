@@ -142,14 +142,9 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function LikeProduct(Request $request)
+    public function show($id)
     {
-        $data = $request->all();
- 
-        $product = Product::where('id',$data['product_id'])->first();
-        $product->like = $product->like+1;
-        $product->save(); 
-
+        //
     }
 
     /**

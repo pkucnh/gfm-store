@@ -103,7 +103,6 @@ Route::get('/by-product', 'App\Http\Controllers\home\HomeController@ByProduct');
 Route::resource('/category',App\Http\Controllers\admin\CategoryController::class);
 Route::resource('/product',App\Http\Controllers\admin\ProductController::class);
 Route::resource('/child-category',App\Http\Controllers\admin\childCateController::class);
-
 Route::post('/select-category', [childCateController::class, 'select_category']);
 // Route::post('category/delete', 'App\Http\Controllers\admin\CategoryController@delete')->name('delete');
 

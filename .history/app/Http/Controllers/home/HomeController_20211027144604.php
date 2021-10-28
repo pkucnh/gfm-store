@@ -146,9 +146,12 @@ class HomeController extends Controller
     {
         $data = $request->all();
  
-        $product = Product::where('id',$data['product_id'])->first();
-        $product->like = $product->like+1;
-        $product->save(); 
+            $product = Product::where('id',$data['product_id'])->first();
+            $product->used = $coupon->used.','.Session::get('customer_id');
+            $product->Amount = $coupon->amount - 1;
+            $product->save();
+         
+        
 
     }
 

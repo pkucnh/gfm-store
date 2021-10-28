@@ -9,9 +9,8 @@
                     @foreach($category as $row)
                     <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="{{asset('admin/images/category')}}/{{$row->image}}">
-                          
+                            <h5><a href="#">{{$row->name}}</a></h5>
                         </div>
-                        <h5 class="cate-name"><a href="#">{{$row->name}}</a></h5>
                     </div>
                     @endforeach
                 </div>

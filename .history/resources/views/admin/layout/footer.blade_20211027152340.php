@@ -13,8 +13,6 @@
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-<script src="{{asset('admin/editor/ckeditor/ckeditor.js')}}"></script>
-<script src="{{asset('admin/editor/ckeditor/ckfinder.js')}}"></script>
 
 <script src="{{asset('admin/dist/js/pages/dashboard.js')}}"></script>
 <!-- jQuery -->
@@ -41,14 +39,9 @@
 <!-- Sweet-alert -->
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
-<script type="text/javascript">
-  CKEDITOR.replace( 'noidung');
-</script>
-
-
-
 {!! Toastr::message() !!}
 
+<script src="{{asset('ckeditor/ckeditor.js')}}"></script>
 <script>
   $(function () {
     $("#example1").DataTable({
@@ -64,10 +57,25 @@
       "autoWidth": false,
       "responsive": true,
     });
-
-
-
   });
+
+    //select cate
+    $('#select_cate').change(function(){
+      var _token = $('input[name="_token"]').val();
+      var id_cate = $('#select_cate').val();
+
+     $.ajax({
+        url: '/select-category',
+        method: 'POST',
+        data: {
+          id_cate:id_cate, _token:_token,
+        },
+        success:function(data){
+          $('#chid_cate').html(data);
+        }
+     });
+    })
 </script>
+
 </body>
 </html>

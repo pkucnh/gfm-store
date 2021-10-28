@@ -66,6 +66,48 @@
     });
 
 
+    $('.img_preview').click(function(){
+      $('.img').click();
+    })
+
+   //select cate
+    $('#select_cate').change(function(){
+      var _token = $('input[name="_token"]').val();
+      var id_cate = $('#select_cate').val();
+
+     $.ajax({
+        url: '/select-category',
+        method: 'POST',
+        data: {
+          id_cate:id_cate, _token:_token,
+        },
+        success:function(data){
+          $('#chid_cate').html(data);
+        }
+     });
+    })
+
+
+    //chọn ảnh liên quan
+    
+    $('.img_preview_gallery').click(function(){
+      var id = $(this).data('id');
+      $('.input_file_'+id).click();
+
+      $('.input_file_'+id).change(function(){
+        previewURL(this)
+      })
+
+      function previewURL(input){
+        if(input.files && input.files[0]){
+            var reader = new FileReader();
+            reader.onload = function(e){
+                $('.img_preview_gallery_'+id).attr('src',e.target.result)
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+      }
+    })
 
   });
 </script>

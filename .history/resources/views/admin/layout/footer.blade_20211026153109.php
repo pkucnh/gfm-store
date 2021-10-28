@@ -13,8 +13,6 @@
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-<script src="{{asset('admin/editor/ckeditor/ckeditor.js')}}"></script>
-<script src="{{asset('admin/editor/ckeditor/ckfinder.js')}}"></script>
 
 <script src="{{asset('admin/dist/js/pages/dashboard.js')}}"></script>
 <!-- jQuery -->
@@ -41,14 +39,9 @@
 <!-- Sweet-alert -->
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
-<script type="text/javascript">
-  CKEDITOR.replace( 'noidung');
-</script>
-
-
-
 {!! Toastr::message() !!}
 
+<script src="{{asset('ckeditor/ckeditor.js')}}"></script>
 <script>
   $(function () {
     $("#example1").DataTable({
@@ -64,9 +57,6 @@
       "autoWidth": false,
       "responsive": true,
     });
-
-
-
   });
 </script>
 </body>

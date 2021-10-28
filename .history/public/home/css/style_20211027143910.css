@@ -819,7 +819,7 @@ ol {
     width: 30px;
     line-height: 70px;
     text-align: center;
-    /* border: 1px solid #ebebeb; */
+    border: 1px solid #ebebeb;
     position: absolute;
     left: -35px;
     top: 50%;
@@ -962,7 +962,7 @@ ol {
 }
 
 .featured__item__text h6 a {
-    color: #3a445f;
+    color: #252525;
 }
 
 .featured__item__text h5 {

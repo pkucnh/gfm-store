@@ -6,7 +6,7 @@
                     <div class="footer__about ">
                         <div class="footer__about__logo ">
                             <a href="./index.html ">
-                        <a href="./index.html"><img src="{{asset('home/img/logo/logo.png')}}" width="65px" height="50px" alt=""><span style="font-size:22px; color:#6dc12e; font-weight: bold">Green Mart</span></a>
+                        <a href="./index.html"><img src="{{asset('home/image/logo/logo.png')}}" width="65px" height="50px" alt=""><span style="font-size:22px; color:#6dc12e; font-weight: bold">Green Mart</span></a>
                         </div>
                         <ul>
                             <li>Address: Thành Phố Hồ Chí Minh</li>
