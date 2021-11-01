@@ -159,8 +159,8 @@
                 <div class="col-lg-7">
                 <nav class="header__menu">
                         <ul>
-                            <li class="active"><a href="./index.html">Trang Chủ</a></li>
-                            <li><a href="./shop-grid.html">Cửa hàng</a></li>
+                            <li class="active"><a href="{{url('/')}}">Trang Chủ</a></li>
+                            <li><a href="{{url('by-category')}}/all/0">Cửa hàng</a></li>
                             <li><a href="#">Trang</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="./shop-details.html">Chi tiết</a></li>
@@ -168,8 +168,8 @@
                                     <li><a href="./checkout.html">Thanh toán</a></li>
                                 </ul>
                             </li>
-                            <li><a href="./blog.html">Bài viết</a></li>
-                            <li><a href="./contact.html">Liên hệ</a></li>
+                            <li><a href="{{url('blogs')}}/all/0">Bài viết</a></li>
+                            <li><a href="{{url('contact')}}">Liên hệ</a></li>
                         </ul>
                     </nav>
                 </div>

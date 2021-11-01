@@ -49,6 +49,10 @@
                                             <div class="col col-md-6"><label for="name" class=" form-control-label">Ngày hết hạn</label></div>
                                             <div class="col-12 col-md-12"><input type="date" id="text-input" value="{{$product->expired_day}}" name="expired_day" placeholder="........" class="form-control" ></div>
                                         </div>
+                                        <div class="form-group">
+                                        <div class="col col-md-6"><label for="name" class=" form-control-label">Tóm tắt</label></div>
+                                        <div class="col-12 col-md-12"><textarea name="summary" id="noidung" class="form-control" style="height:120px">{{$product->summary}}</textarea></div>
+                                        </div> 
                                     </div>
 
 
@@ -130,7 +134,7 @@
                              
                                 <div class="form-group">
                                     <div class="col col-md-6"><label for="name" class=" form-control-label">Mô tả</label></div>
-                                    <div class="col-12 col-md-12"><textarea name="description" id="noidung" class="ckeditor">{!!$product->description!!}</textarea></div>
+                                    <div class="col-12 col-md-12"><textarea name="description" id="noidung" class="ckeditor" >{!!$product->description!!}</textarea></div>
                                     <script type="text/javascript">
                                         var editor = CKEDITOR.replace('noidung',{
                                                 filebrowserImageBrowseUrl : 'localhost:8000/admin/editor/ckfinder/ckfinder.html?type=Images',

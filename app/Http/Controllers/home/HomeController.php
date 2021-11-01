@@ -12,6 +12,7 @@ use App\Models\Rating;
 use App\Models\Blog;
 use App\Models\CategoryBlog;
 use Toastr;
+use Mail;
 use Carbon\Carbon;
 
 class HomeController extends Controller
@@ -24,7 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         $products = Category::join('product', 'product.category_id', '=', 'category.id')->select(('category.name as name_cate'), ('category.slug as slug_cate'),'product.*')->get();
-        $blogs = Blog::get();
+        $blogs = Blog::orderbyDesc('id')->paginate(3);
         $category = Category::where('status','=',1)->get();
         $product_view = Product::orderbyDesc('views')->paginate(3);
         $product_new = Product::orderbyDesc('id')->paginate(3);
@@ -122,19 +123,24 @@ class HomeController extends Controller
     
     
 
-    public function ByProduct(Request $request)
+    public function ByCategory($slug,$id)
     {
-        // $products = Category::->get();
-        $products = Product::join('category', 'category.id', '=', 'category_id')->select(('category.name as name_cate'),'product.*')->orderbyDesc('price_sales')->get();
+        if($id){
+            $products = Product::where('category_id',$id)->paginate(9);
+        }else{
+            $products = Product::paginate(9);
+        }
+        $product_sales = Product::join('category', 'category.id', '=', 'category_id')->select(('category.name as name_cate'),'product.*')->orderbyDesc('price_sales')->get();
         $product_new = Product::orderbyDesc('id')->paginate(3);
         $category = Category::where('status','=',1)->get();
         $data = [
             'category' => $category,
-            'products' => $products, 
+            'products' => $products,
+            'product_sales' => $product_sales, 
             'product_new' => $product_new,
         ];
         
-        return view('home.page.by_product',$data);
+        return view('home.page.by_category',$data);
     }
 
     /**
@@ -159,9 +165,29 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function Contact(Request $request)
     {
-        //
+        $data = $request->all();
+        $category = Category::where('status','=',1)->get();
+        if($data){
+           $contact =  ['name'=>$data['name'],
+                'email'=>$data['email'],
+                'phone'=>$data['phone'],
+                'message'=>$data['message']
+            ];   
+            \Mail::send('mail.mail_contact', ['contact'=>$contact], 
+                
+                function ($message) {
+                    $message->from('phucnhps12099@fpt.edu.vn', 'GreenMarket.com')->to('phucnh2307@gmail.com')->subject('Thư liên hệ');
+            });
+            Session::flash('thongbao','Đã gửi mail thành công');
+        }
+       
+        $data = [
+            'category' => $category,
+
+        ];
+        return view('home.page.contact',$data);
     }
 
     /**

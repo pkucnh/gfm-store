@@ -347,7 +347,7 @@
                             </div>
                             <div class="latest-prdouct__slider__item">
                                 @foreach($product_view as $view)
-                                <a href="{{url('product-detail')}}/{{$view->slug}}/{{$view->id}}"" class="latest-product__item">
+                                <a href="{{url('product-detail')}}/{{$view->slug}}/{{$view->id}}" class="latest-product__item">
                                     <div class="latest-product__item__pic">
                                         <img src="{{asset('admin/images/product')}}/{{$view->image}}" alt="">
                                     </div>

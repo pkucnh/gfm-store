@@ -72,13 +72,10 @@
                         <div class="sidebar__item">
                             <h4>Danh mục</h4>
                             <ul>
-                                <li><a href="#">Thịt heo tươi</a></li>
-                                <li><a href="#">Rau quả</a></li>
-                                <li><a href="#">Thịt bò</a></li>
-                                <li><a href="#">Thịt gà </a></li>
-                                <li><a href="#">Hải sản </a></li>
-                                <li><a href="#">Bơ & Trứng</a></li>
-                                <li><a href="#">Thức ăn nhanh </a></li>
+                                <li><a href="{{url('by-category')}}/all/0">Tất cả</a></li>
+                                @foreach($category as $row)
+                                    <li><a href="{{url('by-category')}}/{{$row->slug}}/{{$row->id}}">{{$row->name}}</a></li>
+                                @endforeach
                             </ul>
                         </div>
                         <div class="sidebar__item">
@@ -170,26 +167,34 @@
                                 <div class="latest-product__slider owl-carousel">
                                     <div class="latest-prdouct__slider__item">
                                         @foreach($product_new as $new)
-                                            <a href="#" class="latest-product__item">
+                                            <a href="{{url('product-detail')}}/{{$new->slug}}/{{$new->id}}" class="latest-product__item">
                                                 <div class="latest-product__item__pic" >
                                                     <img src="{{asset('admin/images/product')}}/{{$new->image}}" style="max-width:100px; max;height:90px">
                                                 </div>
                                                 <div class="latest-product__item__text">
                                                     <h6>{{$new->name}}</h6>
-                                                    <span>{{number_format($new->price),''}} đ</span>
+                                                    @if(!$new->price_sales)
+                                                        <span>{{number_format($new->price),' '}} đ</span>
+                                                    @else
+                                                    <span>{{number_format($new->price_sales),' '}} đ</span>
+                                                    @endif
                                                 </div>
                                             </a>
                                         @endforeach
                                     </div>
                                     <div class="latest-prdouct__slider__item">
                                         @foreach($product_new as $new)
-                                            <a href="#" class="latest-product__item">
+                                            <a href="{{url('product-detail')}}/{{$new->slug}}/{{$new->id}}" class="latest-product__item">
                                                 <div class="latest-product__item__pic" >
                                                     <img src="{{asset('admin/images/product')}}/{{$new->image}}" style="max-width:100px; max;height:100px">
                                                 </div>
                                                 <div class="latest-product__item__text">
                                                     <h6>{{$new->name}}</h6>
-                                                    <span>{{number_format($new->price),''}} đ</span>
+                                                    @if(!$new->price_sales)
+                                                        <span>{{number_format($new->price),' '}} đ</span>
+                                                    @else
+                                                    <span>{{number_format($new->price_sales),' '}} đ</span>
+                                                    @endif
                                                 </div>
                                             </a>
                                         @endforeach
@@ -203,27 +208,50 @@
                 <div class="col-lg-9 col-md-7">
                     <div class="product__discount">
                         <div class="section-title product__discount__title">
-                            <h2>Khuyến mãi</h2>
+                            <h2 style="font-size:24px">Khuyến mãi</h2>
                         </div>
                         <div class="row">
                             <div class="product__discount__slider owl-carousel">
-                                @foreach($products as $product)
-                                    @if($product->price_sales)
+                                @foreach($product_sales as $sales)
+                                    @if($sales->price_sales)
                                         <div class="col-lg-4">
                                             <div class="product__discount__item">
                                                 <div class="product__discount__item__pic set-bg"
-                                                    data-setbg="{{asset('admin/images/product')}}/{{$product->image}}" >
-                                                    <div class="product__discount__percent">-20%</div>
+                                                    data-setbg="{{asset('admin/images/product')}}/{{$sales->image}}" >
+                                                    <div class="product__discount__percent">-Giảm</div>
                                                     <ul class="product__item__pic__hover">
-                                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                        <li><button><i class="fa fa-heart like-product" data-id = "{{$sales->id}}" ></i></button></li>
+                                                        <li><a href="{{url('product-detail')}}/{{$sales->slug}}/{{$sales->id}}"i class="fa fa-retweet"></i></a></li>
+                                                        <li><button class="add-to-cart" name="add-cart" data-id = "{{$sales->id}}"><i class="fa fa-shopping-cart"></i></button></li>
                                                     </ul>
                                                 </div>
+                                                
                                                 <div class="product__discount__item__text">
-                                                    <span>{{$product->name_cate}}</span>
-                                                    <h5><a href="#">{{$product->name}}</a></h5>
-                                                    <div class="product__item__price">{{number_format($product->price),''}} đ<span>{{number_format($product->price_sales),''}} đ</span></div>
+                                                @if(!$sales->price_sales)
+                                                    <form>
+                                                        @csrf
+                                                        <input type="hidden" value="{{$sales->id}}" class="product_id" >
+                                                        <input type="hidden" value="{{$sales->id}}" class="cart_product_id_{{$sales->id}}" >
+                                                        <input type="hidden" value="{{$sales->name}}" class="cart_product_name_{{$sales->id}}" >
+                                                        <input type="hidden" value="{{$sales->image}}" class="cart_product_image_{{$sales->id}}" >
+                                                        <input type="hidden" value="{{$sales>price}}" class="cart_product_price_{{$sales->id}}" >
+                                                        <input type="hidden" name="amount" min="1" value="1" class="cart_product_amount_{{$sales->id}}">  
+                                                    </form> 
+                                                @else
+                                                    <form>
+                                                        @csrf
+                                                        <input type="hidden" value="{{$sales->id}}" class="product_id" >
+                                                        <input type="hidden" value="{{$sales->id}}" class="cart_product_id_{{$sales->id}}" >
+                                                        <input type="hidden" value="{{$sales->name}}" class="cart_product_name_{{$sales->id}}" >
+                                                        <input type="hidden" value="{{$sales->image}}" class="cart_product_image_{{$sales->id}}" >
+                                                        <input type="hidden" value="{{$sales->price_sales}}" class="cart_product_price_{{$sales->id}}" >
+                                                        <input type="hidden" name="amount" min="1" value="1" class="cart_product_amount_{{$sales->id}}">  
+                                      
+                                                    </form> 
+                                                @endif
+                                                    <span>{{$sales->name_cate}}</span>
+                                                    <h5><a href="{{url('product-detail')}}/{{$sales->slug}}/{{$sales->id}}">{{$sales->name}}</a></h5>
+                                                    <div class="product__item__price">{{number_format($sales->price_sales),''}} đ<span>{{number_format($sales->price),''}} đ</span></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -348,7 +376,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-4 col-md-6 col-sm-6">
+                        <!-- <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="img/product/product-1.jpg">
                                     <ul class="product__item__pic__hover">
@@ -512,30 +540,60 @@
                                     <h5>30.000 đ</h5>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
+                        @foreach($products as $product)
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="img/product/product-12.jpg">
+                                <div class="product__item__pic set-bg"  data-setbg="{{asset('admin/images/product')}}/{{$product->image}}" >
                                     <ul class="product__item__pic__hover">
-                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                        <li><button><i class="fa fa-heart like-product" data-id = "{{$product->id}}" ></i></button></li>
+                                        <li><a href="{{url('product-detail')}}/{{$product->slug}}/{{$product->id}}"i class="fa fa-retweet"></i></a></li>
+                                        <li><button class="add-to-cart" name="add-cart" data-id = "{{$product->id}}"><i class="fa fa-shopping-cart"></i></button></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6><a href="#">Trái cây hỗn hợp</a></h6>
-                                    <h5>30.000 đ</h5>
+                                    <h6><a href="{{url('product-detail')}}/{{$product->slug}}/{{$product->id}}">{{$product->name}}</a></h6>
+                                    @if(!$product->price_sales)
+                                    <form>
+                                        @csrf
+                                        <input type="hidden" value="{{$product->id}}" class="product_id" >
+                                        <input type="hidden" value="{{$product->id}}" class="cart_product_id_{{$product->id}}" >
+                                        <input type="hidden" value="{{$product->name}}" class="cart_product_name_{{$product->id}}" >
+                                        <input type="hidden" value="{{$product->image}}" class="cart_product_image_{{$product->id}}" >
+                                        <input type="hidden" value="{{$product->price}}" class="cart_product_price_{{$product->id}}" >
+                                        <input type="hidden" name="amount" min="1" value="1" class="cart_product_amount_{{$product->id}}">  
+                                        <h5>{{number_format($product->price),''}} đ</h5>
+                                    </form> 
+                                @else
+                                    <form>
+                                        @csrf
+                                        <input type="hidden" value="{{$product->id}}" class="product_id" >
+                                        <input type="hidden" value="{{$product->id}}" class="cart_product_id_{{$product->id}}" >
+                                        <input type="hidden" value="{{$product->name}}" class="cart_product_name_{{$product->id}}" >
+                                        <input type="hidden" value="{{$product->image}}" class="cart_product_image_{{$product->id}}" >
+                                        <input type="hidden" value="{{$product->price_sales}}" class="cart_product_price_{{$product->id}}" >
+                                        <!-- <div class="pro-qty"> -->
+                                        <input type="hidden" name="amount" min="1" value="1" class="cart_product_amount_{{$product->id}}">  
+                                        <!-- </div> -->
+                                        <h5>{{number_format($product->price_sales),''}} đ</h5>
+                                    </form> 
+                                @endif
                                 </div>
                             </div>
                         </div>
+                        @endforeach
                     </div>
-                    <div class="product__pagination">
-                        <a href="#">1</a>
+                    <!-- <div class="product__pagination"> -->
+                        <!-- <a href="#">1</a>
                         <a href="#">2</a>
                         <a href="#">3</a>
-                        <a href="#"><i class="fa fa-long-arrow-right"></i></a>
-                    </div>
-                </div>
+                        <a href="#"><i class="fa fa-long-arrow-right"></i></a> -->
+                        <div style="backgroud-color:red;">    {{ $products->links() }}</div>
+                    
+                    <!-- </div> -->
+                   
+              
+                </div>  
             </div>
         </div>
     </section>

@@ -53,8 +53,11 @@
                                         <div class="form-group">
                                             <div class="col col-md-6"><label for="name" class=" form-control-label">Ngày hết hạn</label></div>
                                             <div class="col-12 col-md-12"><input type="date" id="text-input" name="expired_day" placeholder="........" class="form-control" ></div>
-                                        </div>
-
+                                        </div>   
+                                        <div class="form-group">
+                                        <div class="col col-md-6"><label for="name" class=" form-control-label">Tóm tắt</label></div>
+                                        <div class="col-12 col-md-12"><textarea name="summary" id="noidung" class="form-control"></textarea></div>
+                                        </div> 
                                     </div>
 
                                     <div class="col-lg-6">

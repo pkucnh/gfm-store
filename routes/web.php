@@ -11,6 +11,8 @@ use App\Http\Controllers\admin\CategoryBlogController;
 
 use App\Http\Controllers\admin\childCateController;
 
+use App\Http\Controllers\home\CartController;
+// use App\Http\Controllers\home\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,7 +58,7 @@ Route::resource('/blog',App\Http\Controllers\admin\BlogController::class);
 Route::resource('/category_blog',App\Http\Controllers\admin\CategoryBlogController::class);
 
 
-Route::get('/by-product', 'App\Http\Controllers\home\HomeController@ByProduct');
+Route::get('/by-category/{slug}/{id}', 'App\Http\Controllers\home\HomeController@ByCategory');
 
     // ADD-CART
     Route::post('/add-cart','App\Http\Controllers\home\CartController@AddCart');
@@ -119,3 +121,9 @@ Route::post('/check-login-user', 'App\Http\Controllers\home\LoginController@Chec
 Route::post('/like-product', 'App\Http\Controllers\home\HomeController@LikeProduct');
 // lấy lại mật khẩu
 Route::get('/forgot-password', 'App\Http\Controllers\home\LoginController@ForgotPassword');
+// liên he
+Route::get('/contact', 'App\Http\Controllers\home\HomeController@Contact');
+// blog
+Route::get('/blogs/{slug}/{id}', 'App\Http\Controllers\home\BlogController@Blogs');
+
+Route::get('/blog-detail/{slug}/{id}', 'App\Http\Controllers\home\BlogController@BlogDetail');

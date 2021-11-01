@@ -49,7 +49,8 @@ class CategoryBlogController extends Controller
     {
         $data = $request->all();
         $category_blog = new CategoryBlog();
-        $category_blog->name =  $data['name']; 
+        $category_blog->name =  $data['name'];
+        $category_blog->slug =  Str::slug($data['name']);
         $category_blog->save();
         Toastr::success('Thêm danh mục thành công', 'Thành công');
         return Redirect::to("category_blog");
@@ -92,6 +93,7 @@ class CategoryBlogController extends Controller
         $data = $request->all();
         $category_blog = CategoryBlog::find($id);
         $category_blog->name =  $data['name']; 
+        $category_blog->slug =  Str::slug($data['name']);
         $category_blog->save();
         Toastr::success('Cập nhật danh mục thành công', 'Thành công');
         return Redirect::to("category_blog");

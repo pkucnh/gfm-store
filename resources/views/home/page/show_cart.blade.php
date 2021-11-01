@@ -146,8 +146,9 @@
                 <div class="col-lg-8">
                     <div class="shoping__cart__btns">
                         <a href="{{url('/')}}" class="btn primary-btn cart-btn cart-btn-right float-left mr-2" >Tiếp tục mua sắm</a>
-                        <button type="submit" name="update_qty" class="btn primary-btn cart-btn cart-btn-right float-left"><i class="fa fa-refresh" aria-hidden="true"></i>
-                            Cập nhật giỏ hàng</button>
+                        @if(Session::get('customer_id'))
+                            <button type="submit" name="update_qty" class="btn primary-btn cart-btn cart-btn-right float-left"><i class="fa fa-refresh" aria-hidden="true"></i>Cập nhật giỏ hàng</button>
+                        @endif
                     </div>
                     </form>
                 </div>

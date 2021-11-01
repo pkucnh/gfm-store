@@ -60,7 +60,7 @@
                             <div class="mt-2">Giá gốc:<span style="text-decoration: line-through;"> {{number_format($product->price),''}} đ</span></div>
                             <div>Giá Khuyến mãi:<span class="product__details__price"> {{number_format($product->price_sales),''}} đ</span></div>
                         @endif
-                        
+                        <p>{{$product->summary}}</p>
 
                         
                         <!-- <div class="mt-1">Tình trạng:

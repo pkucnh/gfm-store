@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class gallrey extends Model
+class Gallrey extends Model
 {
     protected $table = 'gallery';
     protected $fillable = [];

@@ -9,7 +9,7 @@
                         </div>
                         <ul>
                             @foreach($category as $row)
-                            <li><a href="#">{{$row->name}}</a></li>
+                            <li><a href="{{url('by-category')}}/{{$row->slug}}/{{$row->id}}">{{$row->name}}</a></li>
                             @endforeach
                         </ul>
                     </div>
